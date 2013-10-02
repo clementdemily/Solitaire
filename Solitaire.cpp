@@ -169,7 +169,7 @@ namespace tp
       if (p_colonneSource < 0 || p_colonneSource > 6)
         throw std::runtime_error("deplacerColonneAPile() : choix de colonne incorrect");
 
-      if ((m_piles[p_pileDestination].taille() == 0 && m_colonnes[p_colonneSource].reqLesCartes().element(1).reqValeur() == Carte::AS) ||
+      if ((m_piles[p_pileDestination].taille() == 0 && m_colonnes[p_colonneSource].reqLesCartes().element(1).reqValeur() == AS) ||
           (m_piles[p_pileDestination].taille() > 0 && m_piles[p_pileDestination].premier().estSuivante(m_colonnes[p_colonneSource].reqLesCartes().element(1))))
       {
         m_piles[p_pileDestination].empiler(m_colonnes[p_colonneSource].reqLesCartes().element(1));
@@ -216,7 +216,7 @@ namespace tp
       etatJeu << "Piles";
       for (int i = 0; i < 4; ++i)
       {
-        etatJeu << " "
+        etatJeu << " ";
         if (m_piles[i].taille() > 0)
           etatJeu << m_piles[i].premier();
         else
