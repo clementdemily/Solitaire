@@ -126,7 +126,7 @@ namespace tp
       if (m_talon.taille() == 0)
         throw std::runtime_error("deplacerTalonAColonne() : erreur talon");
 
-      m_colonne[p_colonneDestination].ajoute(m_talon.defiler());
+      m_colonnes[p_colonneDestination].ajoute(m_talon.defiler());
     }
 
     /**                       
@@ -140,13 +140,13 @@ namespace tp
      */
     void  Solitaire::deplacerTalonAPile ( int p_pileDestination ) throw (std::runtime_error)
     {
-      if (p_colonneDestination < 0 && p_colonneDestination > 6)
+      if (p_pileDestination < 0 && p_pileDestination > 6)
         throw std::runtime_error("deplacerTalonAPile() : choix pile incorrect");
       if (m_talon.taille() == 0)
         throw std::runtime_error("deplacerTalonAColonne() : erreur talon");
 
-      if (m_piles[p_colonneDestination].premier().estSuivante(m_talon.premier()))
-        m_piles[p_colonneDestination].empiler(m_talon.defiler());
+      if (m_piles[p_pileDestination].premier().estSuivante(m_talon.premier()))
+        m_piles[p_pileDestination].empiler(m_talon.defiler());
       else
         throw std::runtime_error("deplacerTalonAPile() : valeur ou sorte de carte incorrect");
     }
@@ -169,11 +169,11 @@ namespace tp
       if (p_colonneSource < 0 || p_colonneSource > 6)
         throw std::runtime_error("deplacerColonneAPile() : choix de colonne incorrect");
 
-      if ((m_piles[p_pileDestination].taille() == 0 && m_colonnes[p_colonneSource].reqLesCartes().element(1).reqValeur() == AS) ||
+      if ((m_piles[p_pileDestination].taille() == 0 && m_colonnes[p_colonneSource].reqLesCartes().element(1).reqValeur() == Carte::AS) ||
           (m_piles[p_pileDestination].taille() > 0 && m_piles[p_pileDestination].premier().estSuivante(m_colonnes[p_colonneSource].reqLesCartes().element(1))))
       {
         m_piles[p_pileDestination].empiler(m_colonnes[p_colonneSource].reqLesCartes().element(1));
-        m_colonnes[p_colonneSource].supprimerDernierCarte();
+        m_colonnes[p_colonneSource].supprimerDerniereCarte();
       }
       else
         throw std::runtime_error("deplacerColonneAPile() : deplacement incorrect");
