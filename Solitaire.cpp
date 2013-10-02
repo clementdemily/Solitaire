@@ -140,7 +140,19 @@ namespace tp
      */
     void  Solitaire::deplacerColonneAPile ( int p_colonneSource, int p_pileDestination) throw (std::runtime_error)
     {
+      if (p_pileDestination < 0 || p_pileDestination > 3)
+        throw std::runtime_error("deplacerColonneAPile() : choix de pile incorrect");
+      if (p_colonneSource < 0 || p_colonneSource > 6)
+        throw std::runtime_error("deplacerColonneAPile() : choix de colonne incorrect");
 
+      if ((m_piles[p_pileDestination].taille() == 0 && m_colonnes[p_colonneSource].reqLesCartes().element(1).reqValeur() == AS) ||
+          (m_piles[p_pileDestination].taille() > 0 && m_piles[p_pileDestination].premier().estSuivante(m_colonnes[p_colonneSource].reqLesCartes().element(1))))
+      {
+        m_piles[p_pileDestination].empiler(m_colonnes[p_colonneSource].reqLesCartes().element(1));
+        m_colonnes[p_colonneSource].supprimerDernierCarte();
+      }
+      else
+        throw std::runtime_error("deplacerColonneAPile() : deplacement incorrect");
     }
     
     /**
