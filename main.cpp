@@ -171,10 +171,10 @@ int main (int ac, char **av)
                 break;
             }
         }catch (std::exception & e){
-            // std::cout << e.what() << std::endl;
             err = true;
         }
     }
 
+    std::cout << "Felicitation! Vous avez gagne!" << std::endl;
     return (0);
 }
