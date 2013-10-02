@@ -205,14 +205,24 @@ namespace tp
     {
       std::stringstream etatJeu;
 
-      etatJeu << "Talon : " << (m_talon.taille() > 0 ? m_talon.premier() : "X");
+      etatJeu << "Talon : ";
+      if (m_talon.taille() > 0)
+        etatJeu << m_talon.premier();
+      else
+        etatJeu << "X";
 
       etatJeu << "\t\t\t\t";
 
       etatJeu << "Piles";
       for (int i = 0; i < 4; ++i)
-        etatJeu << " " << (m_piles[i].taille() > 0 ? m_piles[i].premier() : "X");
-
+      {
+        etatJeu << " "
+        if (m_piles[i].taille() > 0)
+          etatJeu << m_piles[i].premier();
+        else
+          etatJeu << "X";
+      }
+      
       etatJeu << std::endl;
 
       for (int i = 0; i < 7 ; ++i)
