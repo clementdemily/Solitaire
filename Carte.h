@@ -5,6 +5,15 @@
 
 #include <iostream>
 
+#ifndef __COLOR__
+  #define BLACK  "\033[22;30m"
+  #define RED  "\033[22;31m"
+  #define GREEN  "\033[22;32m"
+  #define YELLOW  "\033[22;33m"
+
+  #define RESETCOLOR "\033[0m"
+#endif
+
 namespace tp
 {
 

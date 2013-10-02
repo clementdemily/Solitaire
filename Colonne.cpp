@@ -53,7 +53,8 @@ void ColonneCartes::initColonneCartes(Liste<Carte> &p_listeCartes)
  */
 void ColonneCartes::ajoute(const Carte &p_carte)
 {
-  if (m_lesCartes.taille() == 0 || m_lesCartes.element(1).peutEmpiler(p_carte))
+  if ((m_lesCartes.taille() == 0 && p_carte.reqValeur() == ROI)
+      || (m_lesCartes.taille() > 0 && m_lesCartes.element(1).peutEmpiler(p_carte)))
   {
     m_lesCartes.ajouter(p_carte, 1);
     ++m_nbCartesVisibles;
@@ -71,7 +72,7 @@ void ColonneCartes::ajoute(const Carte &p_carte)
 void ColonneCartes::deplacePaquet(ColonneCartes &p_destination, int p_nombreCartes)
 {
   if (p_nombreCartes > 0 && p_nombreCartes <= m_nbCartesVisibles
-      && ((p_destination.m_lesCartes.taille() == 0 && p_destination.m_lesCartes.element(1).reqValeur() == ROI)
+      && ((p_destination.m_lesCartes.taille() == 0 && m_lesCartes.element(p_nombreCartes).reqValeur() == ROI)
         || (p_destination.m_lesCartes.taille() > 0 && p_destination.m_lesCartes.element(1).peutEmpiler(m_lesCartes.element(p_nombreCartes)))))
   {
     for (int i = 0; p_nombreCartes != i; --p_nombreCartes)

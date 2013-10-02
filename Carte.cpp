@@ -96,7 +96,11 @@ std::ostream &operator<<(std::ostream &p_os, const Carte &p_carte)
     "R",
   };
   
-  p_os << s_valeur[(int)p_carte.reqValeur()] << "'" << s_sorte[(int)p_carte.reqSorte()];
+
+  if (s_sorte[(int)p_carte.reqSorte()] == "CO" || s_sorte[(int)p_carte.reqSorte()] == "CA")
+    p_os << RED << s_valeur[(int)p_carte.reqValeur()] << "'" << s_sorte[(int)p_carte.reqSorte()] << RESETCOLOR;
+  else
+    p_os << GREEN << s_valeur[(int)p_carte.reqValeur()] << "'" << s_sorte[(int)p_carte.reqSorte()] << RESETCOLOR;
 
   return p_os;
 }

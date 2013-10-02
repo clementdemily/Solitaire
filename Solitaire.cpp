@@ -126,7 +126,8 @@ namespace tp
       if (m_talon.taille() == 0)
         throw std::runtime_error("deplacerTalonAColonne() : erreur talon");
 
-      m_colonnes[p_colonneDestination].ajoute(m_talon.defiler());
+      m_colonnes[p_colonneDestination].ajoute(m_talon.premier());
+      m_talon.defiler();
     }
 
     /**                       
@@ -148,8 +149,10 @@ namespace tp
       if (
           (m_piles[p_pileDestination].taille() == 0 && m_talon.premier().reqValeur() == AS) ||
           (m_piles[p_pileDestination].taille() > 0 && m_piles[p_pileDestination].premier().estSuivante(m_talon.premier()) )
-          )
-        m_piles[p_pileDestination].empiler(m_talon.defiler());
+          ){
+        m_piles[p_pileDestination].empiler(m_talon.premier());
+        m_talon.defiler();
+      }
       else
         throw std::runtime_error("deplacerTalonAPile() : valeur ou sorte de carte incorrect");
     }
@@ -226,7 +229,7 @@ namespace tp
           etatJeu << "X";
       }
       
-      etatJeu << std::endl;
+      etatJeu << std::endl << std::endl;
 
       for (int i = 0; i < 7 ; ++i)
       etatJeu << "Col." << i << ": " << m_colonnes[i] << std::endl;

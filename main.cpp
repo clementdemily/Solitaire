@@ -1,10 +1,44 @@
 #include <iostream>
+#include <cstdlib>
 #include <sstream>
 #include <stdexcept>
 
 #include "Solitaire.h"
 
 using namespace tp;
+
+
+std::string& reqMenu()
+{
+    static std::string menu;
+
+    menu = YELLOW;
+    menu += 
+    "\n"
+    "*******************************************\n"
+    "Menu\n"
+    "*******************************************\n"
+    "1. Prochaine carte du talon.\n"
+    "2. Deplacer une carte du talon vers une colonne.\n"
+    "3. Deplacer une carte du talon vers une pile.\n"
+    "4. Deplacer une(des) carte(s) d'une colonne vers une autre.\n"
+    "5. Deplacer une carte d'une colonne vers une pile.\n"
+    "6. Quitter.\n"
+    "*******************************************\n"
+    "Votre choix : ";
+    menu += RESETCOLOR;
+
+    return (menu);
+}
+
+void nettoyerConsole()
+{
+#if defined(_WIN32)
+    system("cls");
+#else
+    system("clear");
+#endif           
+}
 
 void deplacerCarteTalonVersColonne(Solitaire& s)
 {
@@ -92,30 +126,24 @@ int main (int ac, char **av)
     std::string menu;
     std::string saisie;
     int choix = -1;
+    bool err = false;
 
-    menu = 
-    "*******************************************\n"
-    "Menu\n"
-    "*******************************************\n"
-    "1. Prochaine carte du talon.\n"
-    "2. Deplacer une carte du talon vers une colonne.\n"
-    "3. Deplacer une carte du talon vers une pile.\n"
-    "4. Deplacer une(des) carte(s) d'une colonne vers une autre.\n"
-    "5. Deplacer une carte d'une colonne vers une pile.\n"
-    "6. Quitter.\n"
-    "*******************************************\n"
-    "Votre choix : ";
 
     while (!s.verifieGagne())
     {
+        choix = -1;
         do
         {
+            nettoyerConsole();
+            if (err)
+                std::cout << RED << "!!! Coup invalide !!!" << RESETCOLOR << std::endl;
             std::cout << s.reqEtatJeu();
-            std::cout << menu;
+            std::cout << reqMenu();
             std::getline (std::cin, saisie);
             std::stringstream(saisie) >> choix;
         } while (choix < 1 || choix > 6);
 
+        err = false;
         try {
             switch (choix)
             {
@@ -142,7 +170,7 @@ int main (int ac, char **av)
             }
         }catch (std::exception & e){
             // std::cout << e.what() << std::endl;
-            std::cout << "!!! Coup invalide !!!" << std::endl;
+            err = true;
         }
     }
 

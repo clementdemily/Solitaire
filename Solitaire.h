@@ -27,6 +27,15 @@
 #include "Carte.h"
 #include "Colonne.h"
 
+#ifndef __COLOR__
+	#define BLACK  "\033[22;30m"
+	#define RED  "\033[22;31m"
+	#define GREEN  "\033[22;32m"
+	#define YELLOW  "\033[22;33m"
+
+	#define RESETCOLOR "\033[0m"
+#endif
+
 #pragma warning( disable : 4290 )// Une fonction est déclarée avec une spécification d'exception (voir la méthode 
 // ajouter(), ce que Visual Studio accepte mais n'implémente pas. Le code avec spécification d'exception ignoré lors
 //de la compilation peut nécessiter une nouvelle compilation et édition de liens pour pouvoir être 
