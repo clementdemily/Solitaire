@@ -140,6 +140,8 @@ int main (int ac, char **av)
             std::cout << s.reqEtatJeu();
             std::cout << reqMenu();
             std::getline (std::cin, saisie);
+            if(std::cin.eof())
+              return (0);
             std::stringstream(saisie) >> choix;
         } while (choix < 1 || choix > 6);
 
