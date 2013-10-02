@@ -205,7 +205,7 @@ namespace tp
     {
       std::stringstream etatJeu;
 
-      etatJeu << "Talon : ";
+      etatJeu << "Talon: ";
       if (m_talon.taille() > 0)
         etatJeu << m_talon.premier();
       else
