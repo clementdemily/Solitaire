@@ -58,6 +58,8 @@ namespace tp
         m_colonnes[i] = p_cp.m_colonnes[i];
       for (int i = 0 ; i < 4; i++)
         m_piles[i] = p_cp.m_piles[i];
+
+      return (*this);
     }
 
     /**                       
@@ -77,11 +79,14 @@ namespace tp
     /**                       
      * \brief Fait avancer le talon d'une carte, c'est-à-dire prend la première et la place à la fin du talon 
      *
-       *  \fn void  Solitaire::avancerTalon()
+     *  \fn void  Solitaire::avancerTalon()
      */
     void  Solitaire::avancerTalon()
     {
-
+      if (m_talon.taille() > 1)
+      {
+        m_talon.enfiler(m_talon.defiler());
+      }
     }
 
     /**                       
@@ -97,7 +102,12 @@ namespace tp
      */
     void  Solitaire::deplacerColonneAColonne( int p_colonneSource, int p_colonneDestination, int p_nbCartes) throw (std::runtime_error)
     {
+      if (p_colonneSource < 0 && p_colonneSource > 6)
+        throw std::runtime_error("deplacerColonneAColonne() : choix colonne source incorrect");
+      if (p_colonneDestination < 0 && p_colonneDestination > 6)
+        throw std::runtime_error("deplacerColonneAColonne() : choix colonne destination incorrect");
 
+      m_colonnes[p_colonneSource].deplacePaquet(m_colonnes[p_colonneDestination], p_nbCartes);
     }
 
     /**                       
@@ -111,7 +121,12 @@ namespace tp
      */
     void  Solitaire::deplacerTalonAColonne ( int p_colonneDestination ) throw (std::runtime_error)
     {
+      if (p_colonneDestination < 0 && p_colonneDestination > 6)
+        throw std::runtime_error("deplacerTalonAColonne() : choix colonne incorrect");
+      if (m_talon.taille() == 0)
+        throw std::runtime_error("deplacerTalonAColonne() : erreur talon");
 
+      m_colonne[p_colonneDestination].ajoute(m_talon.defiler());
     }
 
     /**                       
@@ -125,6 +140,15 @@ namespace tp
      */
     void  Solitaire::deplacerTalonAPile ( int p_pileDestination ) throw (std::runtime_error)
     {
+      if (p_colonneDestination < 0 && p_colonneDestination > 6)
+        throw std::runtime_error("deplacerTalonAPile() : choix pile incorrect");
+      if (m_talon.taille() == 0)
+        throw std::runtime_error("deplacerTalonAColonne() : erreur talon");
+
+      if (m_piles[p_colonneDestination].premier().estSuivante(m_talon.premier()))
+        m_piles[p_colonneDestination].empiler(m_talon.defiler());
+      else
+        throw std::runtime_error("deplacerTalonAPile() : valeur ou sorte de carte incorrect");
     }
 
     /**                       
