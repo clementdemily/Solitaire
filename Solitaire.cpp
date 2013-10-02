@@ -103,7 +103,9 @@ namespace tp
     void  Solitaire::deplacerColonneAColonne( int p_colonneSource, int p_colonneDestination, int p_nbCartes) throw (std::runtime_error)
     {
       if (p_colonneSource < 0 && p_colonneSource > 6)
-        throw std::runtime_error("deplacerColonneAColonne() : choix colonne incorrect");
+        throw std::runtime_error("deplacerColonneAColonne() : choix colonne source incorrect");
+      if (p_colonneDestination < 0 && p_colonneDestination > 6)
+        throw std::runtime_error("deplacerColonneAColonne() : choix colonne destination incorrect");
 
       m_colonnes[p_colonneSource].deplacePaquet(m_colonnes[p_colonneDestination], p_nbCartes);
     }
@@ -119,8 +121,10 @@ namespace tp
      */
     void  Solitaire::deplacerTalonAColonne ( int p_colonneDestination ) throw (std::runtime_error)
     {
-      if ( (p_colonneDestination < 0 && p_colonneDestination > 6) || (m_talon.taille() == 0) )
+      if (p_colonneDestination < 0 && p_colonneDestination > 6)
         throw std::runtime_error("deplacerTalonAColonne() : choix colonne incorrect");
+      if (m_talon.taille() == 0)
+        throw std::runtime_error("deplacerTalonAColonne() : erreur talon");
 
       m_colonne[p_colonneDestination].ajoute(m_talon.defiler());
     }
@@ -136,8 +140,10 @@ namespace tp
      */
     void  Solitaire::deplacerTalonAPile ( int p_pileDestination ) throw (std::runtime_error)
     {
-      if ( (p_colonneDestination < 0 && p_colonneDestination > 6) || (m_talon.taille() == 0) )
+      if (p_colonneDestination < 0 && p_colonneDestination > 6)
         throw std::runtime_error("deplacerTalonAPile() : choix pile incorrect");
+      if (m_talon.taille() == 0)
+        throw std::runtime_error("deplacerTalonAColonne() : erreur talon");
 
       if (m_piles[p_colonneDestination].premier().estSuivante(m_talon.premier()))
         m_piles[p_colonneDestination].empiler(m_talon.defiler());
