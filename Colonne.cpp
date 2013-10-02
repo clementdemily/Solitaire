@@ -71,13 +71,18 @@ void ColonneCartes::ajoute(const Carte &p_carte)
 void ColonneCartes::deplacePaquet(ColonneCartes &p_destination, int p_nombreCartes)
 {
   if (p_nombreCartes > 0 && p_nombreCartes <= m_nbCartesVisibles
-      && (p_destination.m_lesCartes.taille() == 0 || p_destination.m_lesCartes.element(1).peutEmpiler(m_lesCartes.element(p_nombreCartes))))
+      && ((p_destination.m_lesCartes.taille() == 0 && p_destination.m_lesCartes.element(1).reqValeur() == ROI)
+        || (p_destination.m_lesCartes.taille() > 0 && p_destination.m_lesCartes.element(1).peutEmpiler(m_lesCartes.element(p_nombreCartes)))))
+  {
     for (int i = 0; p_nombreCartes != i; --p_nombreCartes)
     {
       p_destination.ajoute(m_lesCartes.element(p_nombreCartes));
       m_lesCartes.enleverPos(p_nombreCartes);
       --m_nbCartesVisibles;
     }
+    if (m_lesCartes.taille() > 0 && m_nbCartesVisibles == 0)
+      m_nbCartesVisibles = 1;
+  }
   else
     throw std::runtime_error("deplacePaquet() : Deplacement impossible");
 }
@@ -106,6 +111,8 @@ void ColonneCartes::supprimerDerniereCarte()
  */
 std::ostream &operator<<(std::ostream &p_os, const ColonneCartes &p_colonneCartes)
 {
+  if (p_colonneCartes.reqLesCartes().taille() == 0)
+    p_os << "-";
   for (int i = p_colonneCartes.reqLesCartes().taille(); i > 0; --i)
   {
     if (i < p_colonneCartes.reqLesCartes().taille())

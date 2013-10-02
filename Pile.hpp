@@ -223,7 +223,7 @@ namespace tp
 	{
 		if(m_cpt != 0)
 			return m_debut->m_el;
-		throw std::logic_error("Dernier: la file est vide!");
+		throw std::logic_error("Premier: la pile est vide!");
 	}
 
 	/**
@@ -237,7 +237,7 @@ namespace tp
 		elem tmp;
 
 		if(m_cpt == 0)
-			throw std::logic_error("Premier: la file est vide!");
+			throw std::logic_error("Dernier: la pile est vide!");
 		tmp = m_debut;
 
 		while (tmp->m_suivant != 0)

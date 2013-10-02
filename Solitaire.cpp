@@ -145,7 +145,10 @@ namespace tp
       if (m_talon.taille() == 0)
         throw std::runtime_error("deplacerTalonAColonne() : erreur talon");
 
-      if (m_piles[p_pileDestination].premier().estSuivante(m_talon.premier()))
+      if (
+          (m_piles[p_pileDestination].taille() == 0 && m_talon.premier().reqValeur() == AS) ||
+          (m_piles[p_pileDestination].taille() > 0 && m_piles[p_pileDestination].premier().estSuivante(m_talon.premier()) )
+          )
         m_piles[p_pileDestination].empiler(m_talon.defiler());
       else
         throw std::runtime_error("deplacerTalonAPile() : valeur ou sorte de carte incorrect");
