@@ -10,9 +10,6 @@ namespace tp
     Solitaire::Solitaire()
     {
       _init();
-
-      for (int i = 0 ; i < 7 ; i++)
-      std::cout << m_colonnes[i] << std::endl;
     }
 
     /**
@@ -128,7 +125,6 @@ namespace tp
      */
     void  Solitaire::deplacerTalonAPile ( int p_pileDestination ) throw (std::runtime_error)
     {
-
     }
 
     /**                       
@@ -168,7 +164,8 @@ namespace tp
      */
     std::string Solitaire::reqEtatJeu ( ) const
     {
-
+      for (int i = 0 ; i < 7 ; i++)
+      std::cout << m_colonnes[i] << std::endl;
     }
 
     /**
