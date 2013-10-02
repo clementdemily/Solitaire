@@ -8,22 +8,82 @@ using namespace tp;
 
 void deplacerCarteTalonVersColonne(Solitaire& s)
 {
+    std::string saisie;
+    int choixColonne = -1;
 
+    do {
+        std::cout << "Entrer le numero de la colonne de destination [0, 6] : ";
+        std::getline (std::cin, saisie);
+        std::stringstream(saisie) >> choixColonne;
+    } while (choixColonne < 0 || choixColonne > 6);
+
+    s.deplacerTalonAColonne(choixColonne);
 }
 
 void deplacerCarteTalonVersPile(Solitaire& s)
 {
+    std::string saisie;
+    int choixPile = -1;
 
+    do {
+        std::cout << "Entrer le numero de la pile de destination [0, 3] : ";
+        std::getline (std::cin, saisie);
+        std::stringstream(saisie) >> choixPile;
+    } while (choixPile < 0 || choixPile > 3);
+
+    s.deplacerTalonAPile(choixPile);
 }
 
 void deplacerCartesColonneVersColonne(Solitaire& s)
 {
+    std::string saisie;
+    int choixColonne1 = -1;
+    int choixColonne2 = -1;
+    int nbCartes = -1;
 
+    do {
+        std::cout << "Entrer le numero de la colonne d'origine [0, 6] : ";
+        std::getline (std::cin, saisie);
+        std::stringstream(saisie) >> choixColonne1;
+    } while (choixColonne1 < 0 || choixColonne1 > 6);
+
+    saisie = "";
+    do {
+        std::cout << "Entrer le numero de la colonne de destination [0, 6] : ";
+        std::getline (std::cin, saisie);
+        std::stringstream(saisie) >> choixColonne2;
+    } while (choixColonne2 < 0 || choixColonne2 > 6);
+
+    saisie = "";
+    do {
+        std::cout << "Entrer le nombre de carte(s) a deplacer [1, 13] : ";
+        std::getline (std::cin, saisie);
+        std::stringstream(saisie) >> nbCartes;
+    } while (nbCartes < 1 || nbCartes > 13);
+
+    s.deplacerColonneAColonne(choixColonne1, choixColonne2, nbCartes);
 }
 
 void deplacerCarteColonneVersPile(Solitaire& s)
 {
+    std::string saisie;
+    int choixColonne = -1;
+    int choixPile = -1;
 
+    do {
+        std::cout << "Entrer le numero de la colonne d'origine [0, 6] : ";
+        std::getline (std::cin, saisie);
+        std::stringstream(saisie) >> choixColonne;
+    } while (choixColonne < 0 || choixColonne > 6);
+
+    saisie = "";
+    do {
+        std::cout << "Entrer le numero de la pile de destination [0, 3] : ";
+        std::getline (std::cin, saisie);
+        std::stringstream(saisie) >> choixPile;
+    } while (choixPile < 0 || choixPile > 3);
+
+    s.deplacerColonneAPile(choixColonne, choixPile);
 }
 
 int main (int ac, char **av)
@@ -81,7 +141,8 @@ int main (int ac, char **av)
                 break;
             }
         }catch (std::exception & e){
-            std::cout << e.what() << std::endl;
+            // std::cout << e.what() << std::endl;
+            std::cout << "!!! Coup invalide !!!" << std::endl;
         }
     }
 
