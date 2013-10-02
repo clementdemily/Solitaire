@@ -1,0 +1,13 @@
+CMakeCache.txt
+cmake_install.cmake
+solitaire
+CMakeFiles
+CMakeFiles/*
+Makefile
+
+Testeur/CMakeCache.txt
+Testeur/cmake_install.cmake
+Testeur/runTests
+Testeur/CMakeFiles
+Testeur/CMakeFiles/*
+Testeur/Makefile
