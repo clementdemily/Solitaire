@@ -164,8 +164,22 @@ namespace tp
      */
     std::string Solitaire::reqEtatJeu ( ) const
     {
-      for (int i = 0 ; i < 7 ; i++)
-      std::cout << m_colonnes[i] << std::endl;
+      std::stringstream etatJeu;
+
+      etatJeu << "Talon : " << (m_talon.taille() > 0 ? m_talon.premier() : "X");
+
+      etatJeu << "\t\t\t\t";
+
+      etatJeu << "Piles";
+      for (int i = 0; i < 4; ++i)
+        etatJeu << " " << (m_piles[i].taille() > 0 ? m_piles[i].premier() : "X");
+
+      etatJeu << std::endl;
+
+      for (int i = 0; i < 7 ; ++i)
+      etatJeu << "Col." << i << ": " << m_colonnes[i] << std::endl;
+
+      return etatJeu.str();
     }
 
     /**
