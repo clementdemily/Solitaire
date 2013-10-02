@@ -12,7 +12,8 @@
 #define _SOLITAIRE__H
 
 #include <iostream>
-# include <stdexcept>	// Pour les exceptions standards
+#include <sstream>
+#include <stdexcept>	// Pour les exceptions standards
 #include <string>
 
 #include <algorithm>    // std::random_shuffle
