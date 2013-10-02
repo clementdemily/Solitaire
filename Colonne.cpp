@@ -5,22 +5,40 @@
 namespace tp
 {
 
+/**
+ * \fn ColonneCartes::ColonneCartes()
+ */
 ColonneCartes::ColonneCartes()
   : m_nbCartesVisibles(0)
 {
 
 }
 
+/**
+ * \fn int ColonneCartes::getNbCartesVisibles() const
+ *
+ * \return le nombre de cartes visibles
+ */
 int ColonneCartes::getNbCartesVisibles() const
 {
   return m_nbCartesVisibles;
 }
 
+/**
+ * \fn const Liste<Carte> &ColonneCartes::reqLesCartes() const
+ *
+ * \return la liste des cartes
+ */
 const Liste<Carte> &ColonneCartes::reqLesCartes() const
 {
   return m_lesCartes;
 }
 
+/**
+ * \fn void ColonneCartes::initColonneCartes(Liste<Carte> &p_listeCartes)
+ *
+ * \param[in] p_listeCartes la liste de cartes avec laquelle initialiser la colonne
+ */
 void ColonneCartes::initColonneCartes(Liste<Carte> &p_listeCartes)
 {
   m_lesCartes = p_listeCartes;
@@ -28,6 +46,11 @@ void ColonneCartes::initColonneCartes(Liste<Carte> &p_listeCartes)
     m_nbCartesVisibles = 1;
 }
 
+/**
+ * \fn void ColonneCartes::ajoute(const Carte &p_carte)
+ *
+ * \param[in] p_carte la carte a ajouter a la colonne
+ */
 void ColonneCartes::ajoute(const Carte &p_carte)
 {
   if (m_lesCartes.taille() == 0 || m_lesCartes.element(1).peutEmpiler(p_carte))
@@ -39,6 +62,12 @@ void ColonneCartes::ajoute(const Carte &p_carte)
     throw std::runtime_error("ajoute() : Impossible d'ajouter dans la colonne");
 }
 
+/**
+ * \fn void ColonneCartes::deplacePaquet(ColonneCartes &p_destination, int p_nombreCartes)
+ *
+ * \param[in] p_destination la colonne vers laquelle deplacer les cartes
+ * \param[in] p_nombreCartes le nombre de cartes a deplacer
+ */
 void ColonneCartes::deplacePaquet(ColonneCartes &p_destination, int p_nombreCartes)
 {
   if (p_nombreCartes > 0 && p_nombreCartes <= m_nbCartesVisibles
@@ -53,6 +82,9 @@ void ColonneCartes::deplacePaquet(ColonneCartes &p_destination, int p_nombreCart
     throw std::runtime_error("deplacePaquet() : Deplacement impossible");
 }
 
+/**
+ * \fn void ColonneCartes::supprimerDerniereCarte()
+ */
 void ColonneCartes::supprimerDerniereCarte()
 {
   if (m_lesCartes.taille() > 0)
@@ -64,6 +96,14 @@ void ColonneCartes::supprimerDerniereCarte()
   }
 }
 
+/**
+ * \fn std::ostream &operator<<(std::ostream &p_os, const ColonneCartes &p_colonneCartes)
+ *
+ * \param[in] p_os le flux de sortie
+ * \param[in] p_colonneCartes la colonne a envoyer au flux
+ *
+ * \return une reference sur le flux de sortie
+ */
 std::ostream &operator<<(std::ostream &p_os, const ColonneCartes &p_colonneCartes)
 {
   for (int i = p_colonneCartes.reqLesCartes().taille(); i > 0; --i)
