@@ -188,7 +188,10 @@ namespace tp
      */
     bool  Solitaire::verifieGagne ( ) const
     {
-
+      for (int i = 0; i < 4; ++i)
+        if (m_piles[i].taille() < 14)
+          return false;
+      return true;
     }
 
     /**
