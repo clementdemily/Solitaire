@@ -6,14 +6,14 @@
 #include <iostream>
 #include <string>
 
-#ifndef __COLOR__  
+#ifndef __COLOR__
   const std::string BLACK = "\033[22;30m";
   const std::string RED = "\033[22;31m";
   const std::string GREEN = "\033[22;32m";
   const std::string YELLOW = "\033[22;33m";
 
   const std::string RESETCOLOR = "\033[0m";
-#endif
+#endif /* !__COLOR__ */
 
 namespace tp
 {
