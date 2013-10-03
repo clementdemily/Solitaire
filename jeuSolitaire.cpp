@@ -7,13 +7,16 @@
 
 using namespace tp;
 
-
 std::string& reqMenu()
 {
     static std::string menu;
 
+#if !defined(_WIN32)
     menu = YELLOW;
     menu += 
+#else
+    menu =
+#endif
     "\n"
     "*******************************************\n"
     "Menu\n"
@@ -26,8 +29,9 @@ std::string& reqMenu()
     "6. Quitter.\n"
     "*******************************************\n"
     "Votre choix : ";
+#if !defined(_WIN32)
     menu += RESETCOLOR;
-
+#endif
     return (menu);
 }
 
@@ -120,56 +124,66 @@ void deplacerCarteColonneVersPile(Solitaire& s)
     s.deplacerColonneAPile(choixColonne, choixPile);
 }
 
+void jouer(Solitaire& s, int choix)
+{
+    switch (choix)
+    {
+        case 1:
+            s.avancerTalon();
+        break;
+        case 2:
+            deplacerCarteTalonVersColonne(s);
+        break;
+        case 3:
+            deplacerCarteTalonVersPile(s);
+        break;
+        case 4:
+            deplacerCartesColonneVersColonne(s);
+        break;
+        case 5:
+            deplacerCarteColonneVersPile(s);
+        break;
+        case 6:
+            exit(0);
+        break;
+        default:
+        break;
+    }
+}
+
+int recupererChoixMenu(Solitaire& s, bool err)
+{
+    std::string saisie;
+    int choix = -1;
+
+    do
+    {
+        nettoyerConsole();
+        if (err)
+            std::cout << RED << "!!! Coup invalide !!!" << RESETCOLOR << std::endl;
+        std::cout << s.reqEtatJeu();
+        std::cout << reqMenu();
+        std::getline (std::cin, saisie);
+        if(std::cin.eof())
+          exit (0);
+        std::stringstream(saisie) >> choix;
+    } while (choix < 1 || choix > 6);
+
+    return (choix);
+}
+
 int main (int ac, char **av)
 {
     Solitaire s;
-    std::string menu;
-    std::string saisie;
-    int choix = -1;
+    int choix = 0;
     bool err = false;
-
 
     while (!s.verifieGagne())
     {
-        choix = -1;
-        do
-        {
-            nettoyerConsole();
-            if (err)
-                std::cout << RED << "!!! Coup invalide !!!" << RESETCOLOR << std::endl;
-            std::cout << s.reqEtatJeu();
-            std::cout << reqMenu();
-            std::getline (std::cin, saisie);
-            if(std::cin.eof())
-              return (0);
-            std::stringstream(saisie) >> choix;
-        } while (choix < 1 || choix > 6);
-
+        choix = recupererChoixMenu(s, err);
         err = false;
         try {
-            switch (choix)
-            {
-                case 1:
-                    s.avancerTalon();
-                break;
-                case 2:
-                    deplacerCarteTalonVersColonne(s);
-                break;
-                case 3:
-                    deplacerCarteTalonVersPile(s);
-                break;
-                case 4:
-                    deplacerCartesColonneVersColonne(s);
-                break;
-                case 5:
-                    deplacerCarteColonneVersPile(s);
-                break;
-                case 6:
-                    return (0);
-                break;
-                default:
-                break;
-            }
+            jouer(s, choix);
         }catch (std::exception & e){
             err = true;
         }

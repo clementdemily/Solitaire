@@ -97,10 +97,14 @@ std::ostream &operator<<(std::ostream &p_os, const Carte &p_carte)
   };
   
 
+#if defined(_WIN32)
+    p_os << s_valeur[(int)p_carte.reqValeur()] << "'" << s_sorte[(int)p_carte.reqSorte()];
+#else
   if (s_sorte[(int)p_carte.reqSorte()] == "CO" || s_sorte[(int)p_carte.reqSorte()] == "CA")
     p_os << RED << s_valeur[(int)p_carte.reqValeur()] << "'" << s_sorte[(int)p_carte.reqSorte()] << RESETCOLOR;
   else
     p_os << GREEN << s_valeur[(int)p_carte.reqValeur()] << "'" << s_sorte[(int)p_carte.reqSorte()] << RESETCOLOR;
+#endif
 
   return p_os;
 }

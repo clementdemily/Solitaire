@@ -1,9 +1,9 @@
 /**
  * \file Liste.h
  * \brief Classe Définissant le type abstrait liste
- * \author Mathieu Dumoulin
- * \version 0.2
- * \date Septembre 2013
+ * \author Nathan Irjud
+ * \version 1.0
+ * \date Octobre 2013
  *
  * Implémentation dans une liste circulaire simplement chaînée
  */
@@ -31,7 +31,20 @@ class Liste
 public:
 
     //Constructeurs
+    /**
+     *  \brief Constructeur par défaut
+     *
+     *  \post Une instance de la classe Liste est initialisée
+     */
     Liste();
+
+    /**
+     *  \brief Constructeur de copie
+     *
+     *  \pre Il faut qu'il y ait suffisamment de mémoire
+     *  \post une copie profonde la File source
+     *  \exception bad_alloc s'il n'y a pas assez de mémoire
+     */
     Liste(const Liste&);
     ~Liste();
 
