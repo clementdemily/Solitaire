@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Solitaire -:  Fichier source de Testeurs/carteTesteur.cpp</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Solitaire -
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Testeurs/carteTesteur.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="carte_testeur_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00002"></a>00002 <span class="preprocessor">#include &lt;gtest/gtest.h&gt;</span>
+<a name="l00003"></a>00003 <span class="preprocessor">#include &quot;../Carte.h&quot;</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a>00005 <span class="keyword">using namespace </span>tp;
+<a name="l00006"></a>00006 
+<a name="l00007"></a><a class="code" href="class_carte_test.html">00007</a> <span class="keyword">class </span><a class="code" href="class_carte_test.html">CarteTest</a> : <span class="keyword">public</span> testing::Test
+<a name="l00008"></a>00008 {
+<a name="l00009"></a>00009 
+<a name="l00010"></a>00010 };
+<a name="l00011"></a>00011 
+<a name="l00012"></a><a class="code" href="carte_testeur_8cpp.html#a2485a181a18efc1f7062037adcfc0da5">00012</a> <a class="code" href="carte_testeur_8cpp.html#a2485a181a18efc1f7062037adcfc0da5">TEST_F</a>(<a class="code" href="class_carte_test.html">CarteTest</a>, creation)
+<a name="l00013"></a>00013 {
+<a name="l00014"></a>00014   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> carte(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00015"></a>00015 }
+<a name="l00016"></a>00016 
+<a name="l00017"></a><a class="code" href="carte_testeur_8cpp.html#acc12e086f8077e690189a6ad43406381">00017</a> <a class="code" href="carte_testeur_8cpp.html#a2485a181a18efc1f7062037adcfc0da5">TEST_F</a>(<a class="code" href="class_carte_test.html">CarteTest</a>, accesseurs)
+<a name="l00018"></a>00018 {
+<a name="l00019"></a>00019   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> carte(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00020"></a>00020 
+<a name="l00021"></a>00021   EXPECT_EQ(carte.<a class="code" href="classtp_1_1_carte.html#a5ca8a889b6a7c20ba22450f33c0ad584">reqSorte</a>(), <a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>);
+<a name="l00022"></a>00022   EXPECT_EQ(carte.<a class="code" href="classtp_1_1_carte.html#a0c09ca9902a59d70cf9becb7cd901051">reqValeur</a>(), <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00023"></a>00023 }
+<a name="l00024"></a>00024 
+<a name="l00025"></a><a class="code" href="carte_testeur_8cpp.html#a0c61baa5ad6c858a5079738f32798ae1">00025</a> <a class="code" href="carte_testeur_8cpp.html#a2485a181a18efc1f7062037adcfc0da5">TEST_F</a>(<a class="code" href="class_carte_test.html">CarteTest</a>, estSuivante)
+<a name="l00026"></a>00026 {
+<a name="l00027"></a>00027   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> asPique(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00028"></a>00028   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> deuxPique(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a50864c71bc5396cd7b9d70658ebb1406" title="as">DEUX</a>);
+<a name="l00029"></a>00029   EXPECT_TRUE(asPique.<a class="code" href="classtp_1_1_carte.html#a5edc818d8fd91d6fc6b6cb5380fb8382">estSuivante</a>(deuxPique));
+<a name="l00030"></a>00030   EXPECT_FALSE(deuxPique.<a class="code" href="classtp_1_1_carte.html#a5edc818d8fd91d6fc6b6cb5380fb8382">estSuivante</a>(asPique));
+<a name="l00031"></a>00031 
+<a name="l00032"></a>00032   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> deuxTrefle(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaaef976b677aea6681e7074345d97a4ae" title="carreau">TREFLE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a50864c71bc5396cd7b9d70658ebb1406" title="as">DEUX</a>);
+<a name="l00033"></a>00033   EXPECT_FALSE(asPique.<a class="code" href="classtp_1_1_carte.html#a5edc818d8fd91d6fc6b6cb5380fb8382">estSuivante</a>(deuxTrefle));
+<a name="l00034"></a>00034 
+<a name="l00035"></a>00035   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> troisPique(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a20c84f9da8d1c10c5edb08eedbd5d980" title="2">TROIS</a>);
+<a name="l00036"></a>00036   EXPECT_FALSE(asPique.<a class="code" href="classtp_1_1_carte.html#a5edc818d8fd91d6fc6b6cb5380fb8382">estSuivante</a>(troisPique));
+<a name="l00037"></a>00037 }
+<a name="l00038"></a>00038 
+<a name="l00039"></a><a class="code" href="carte_testeur_8cpp.html#acd4ef0358907269600c81ed19670715b">00039</a> <a class="code" href="carte_testeur_8cpp.html#a2485a181a18efc1f7062037adcfc0da5">TEST_F</a>(<a class="code" href="class_carte_test.html">CarteTest</a>, peutEmpiler)
+<a name="l00040"></a>00040 {
+<a name="l00041"></a>00041   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> roiPique(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a5d7a50876ec2a386b84a99ee8db0c4bf" title="dame">ROI</a>);
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> damePique(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a7e0d436d1c405fdf3a85322968a803d2" title="valet">DAME</a>);
+<a name="l00044"></a>00044   EXPECT_FALSE(roiPique.<a class="code" href="classtp_1_1_carte.html#a42c9d0771e130773293b6ecc94cc9818">peutEmpiler</a>(damePique));
+<a name="l00045"></a>00045   EXPECT_FALSE(damePique.<a class="code" href="classtp_1_1_carte.html#a42c9d0771e130773293b6ecc94cc9818">peutEmpiler</a>(roiPique));
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> dameCoeur(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fea4bce678ae2a5033540dca0d824330d2d" title="pique">COEUR</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a7e0d436d1c405fdf3a85322968a803d2" title="valet">DAME</a>);
+<a name="l00048"></a>00048   EXPECT_TRUE(roiPique.<a class="code" href="classtp_1_1_carte.html#a42c9d0771e130773293b6ecc94cc9818">peutEmpiler</a>(dameCoeur));
+<a name="l00049"></a>00049   EXPECT_FALSE(dameCoeur.peutEmpiler(roiPique));
+<a name="l00050"></a>00050 
+<a name="l00051"></a>00051   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> dameCarreau(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feac0d61939df7ea1ef3108f6dcb0cd0553" title="coeur">CARREAU</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a7e0d436d1c405fdf3a85322968a803d2" title="valet">DAME</a>);
+<a name="l00052"></a>00052   EXPECT_TRUE(roiPique.<a class="code" href="classtp_1_1_carte.html#a42c9d0771e130773293b6ecc94cc9818">peutEmpiler</a>(dameCarreau));
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> dameTrefle(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaaef976b677aea6681e7074345d97a4ae" title="carreau">TREFLE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a7e0d436d1c405fdf3a85322968a803d2" title="valet">DAME</a>);
+<a name="l00055"></a>00055   EXPECT_FALSE(roiPique.<a class="code" href="classtp_1_1_carte.html#a42c9d0771e130773293b6ecc94cc9818">peutEmpiler</a>(dameTrefle));
+<a name="l00056"></a>00056 
+<a name="l00057"></a>00057   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> deuxCarreau(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feac0d61939df7ea1ef3108f6dcb0cd0553" title="coeur">CARREAU</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a50864c71bc5396cd7b9d70658ebb1406" title="as">DEUX</a>);
+<a name="l00058"></a>00058   
+<a name="l00059"></a>00059   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> asPique(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00060"></a>00060   EXPECT_TRUE(deuxCarreau.peutEmpiler(asPique));
+<a name="l00061"></a>00061 
+<a name="l00062"></a>00062   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> asCoeur(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fea4bce678ae2a5033540dca0d824330d2d" title="pique">COEUR</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00063"></a>00063   EXPECT_FALSE(deuxCarreau.peutEmpiler(asCoeur));
+<a name="l00064"></a>00064 
+<a name="l00065"></a>00065   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> asCarreau(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feac0d61939df7ea1ef3108f6dcb0cd0553" title="coeur">CARREAU</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00066"></a>00066   EXPECT_FALSE(deuxCarreau.peutEmpiler(asCarreau));
+<a name="l00067"></a>00067 
+<a name="l00068"></a>00068   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> asTrefle(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaaef976b677aea6681e7074345d97a4ae" title="carreau">TREFLE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00069"></a>00069   EXPECT_TRUE(deuxCarreau.peutEmpiler(asTrefle));
+<a name="l00070"></a>00070 }
+<a name="l00071"></a>00071 
+<a name="l00072"></a><a class="code" href="carte_testeur_8cpp.html#a7d0835b61509960751524b66d5506ff9">00072</a> <a class="code" href="carte_testeur_8cpp.html#a2485a181a18efc1f7062037adcfc0da5">TEST_F</a>(<a class="code" href="class_carte_test.html">CarteTest</a>, output)
+<a name="l00073"></a>00073 {
+<a name="l00074"></a>00074   std::stringstream ss;
+<a name="l00075"></a>00075 
+<a name="l00076"></a>00076   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> asPique(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00077"></a>00077   ss &lt;&lt; asPique;
+<a name="l00078"></a>00078   EXPECT_STREQ(ss.str().c_str(), <span class="stringliteral">&quot;AS&#39;PI&quot;</span>);
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080   ss.str(<span class="stringliteral">&quot;&quot;</span>);
+<a name="l00081"></a>00081   <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> dameCoeur(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fea4bce678ae2a5033540dca0d824330d2d" title="pique">COEUR</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a7e0d436d1c405fdf3a85322968a803d2" title="valet">DAME</a>);
+<a name="l00082"></a>00082   ss &lt;&lt; dameCoeur;
+<a name="l00083"></a>00083   EXPECT_STREQ(ss.str().c_str(), <span class="stringliteral">&quot;D&#39;CO&quot;</span>);
+<a name="l00084"></a>00084 }
+<a name="l00085"></a>00085 
+<a name="l00086"></a><a class="code" href="carte_testeur_8cpp.html#a0c99d968a34e803d378692bde2e3f18f">00086</a> <span class="keywordtype">int</span> <a class="code" href="_c_make_c_compiler_id_8c.html#a0ddf1224851353fc92bfbff6f499fa97">main</a>(<span class="keywordtype">int</span> ac, <span class="keywordtype">char</span> **av)
+<a name="l00087"></a>00087 {
+<a name="l00088"></a>00088   testing::InitGoogleTest(&amp;ac, av);
+<a name="l00089"></a>00089   <span class="keywordflow">return</span> RUN_ALL_TESTS();
+<a name="l00090"></a>00090 }
+</pre></div></div><!-- contents -->
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Octobre 3 2013 11:19:33 pour Solitaire - par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

@@ -82,9 +82,3 @@ TEST_F(CarteTest, output)
   ss << dameCoeur;
   EXPECT_STREQ(ss.str().c_str(), "D'CO");
 }
-
-int main(int ac, char **av)
-{
-  testing::InitGoogleTest(&ac, av);
-  return RUN_ALL_TESTS();
-}

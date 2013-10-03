@@ -11,3 +11,7 @@ Testeur/runTests
 Testeur/CMakeFiles
 Testeur/CMakeFiles/*
 Testeur/Makefile
+
+.cprojet
+.projet
+*zip

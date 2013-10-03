@@ -79,7 +79,6 @@ TEST_F(ColonneCartesTest, deplacePaquet)
   source.deplacePaquet(destination, 2);
   EXPECT_EQ(0, source.getNbCartesVisibles());
   EXPECT_EQ(3, destination.getNbCartesVisibles());
-
   source.ajoute(huitCarreau);
   EXPECT_THROW(source.deplacePaquet(destination, 1), std::runtime_error);
 }
@@ -101,9 +100,4 @@ TEST_F(ColonneCartesTest, supprimerDernierCarte)
   
   colonne.supprimerDerniereCarte();
   EXPECT_EQ(0, colonne.getNbCartesVisibles());
-}
-
-TEST_F(ColonneCartesTest, output)
-{
-  
 }

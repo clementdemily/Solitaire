@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Solitaire -:  Fichier source de Solitaire.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Solitaire -
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Solitaire.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_solitaire_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00009"></a>00009 <span class="preprocessor">#ifndef _SOLITAIRE__H</span>
+<a name="l00010"></a>00010 <span class="preprocessor"></span><span class="preprocessor">#define _SOLITAIRE__H</span>
+<a name="l00011"></a>00011 <span class="preprocessor"></span>
+<a name="l00012"></a>00012 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00013"></a>00013 <span class="preprocessor">#include &lt;sstream&gt;</span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;stdexcept&gt;</span>    <span class="comment">// Pour les exceptions standards</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017 <span class="preprocessor">#include &lt;algorithm&gt;</span>    <span class="comment">// std::random_shuffle</span>
+<a name="l00018"></a>00018 <span class="preprocessor">#include &lt;vector&gt;</span>       <span class="comment">// std::vector</span>
+<a name="l00019"></a>00019 <span class="preprocessor">#include &lt;ctime&gt;</span>        <span class="comment">// std::time</span>
+<a name="l00020"></a>00020 <span class="preprocessor">#include &lt;cstdlib&gt;</span>      <span class="comment">// std::rand, std::srand</span>
+<a name="l00021"></a>00021 
+<a name="l00022"></a>00022 <span class="preprocessor">#include &quot;<a class="code" href="_file_8h.html" title="Classe dÃ©finissant le type abstrait file.">File.h</a>&quot;</span>
+<a name="l00023"></a>00023 <span class="preprocessor">#include &quot;<a class="code" href="_pile_8h.html">Pile.h</a>&quot;</span>
+<a name="l00024"></a>00024 <span class="preprocessor">#include &quot;<a class="code" href="_liste_8h.html" title="Classe DÃ©finissant le type abstrait liste.">Liste.h</a>&quot;</span>
+<a name="l00025"></a>00025 <span class="preprocessor">#include &quot;<a class="code" href="_carte_8h.html">Carte.h</a>&quot;</span>
+<a name="l00026"></a>00026 <span class="preprocessor">#include &quot;<a class="code" href="_colonne_8h.html" title="Classe dÃ©finissant une colonne de carte.">Colonne.h</a>&quot;</span>
+<a name="l00027"></a>00027 
+<a name="l00028"></a>00028 <span class="preprocessor">#ifndef __COLOR__</span>
+<a name="l00029"></a><a class="code" href="_solitaire_8h.html#a7b3b25cba33b07c303f3060fe41887f6">00029</a> <span class="preprocessor"></span><span class="preprocessor">    #define BLACK  &quot;\033[22;30m&quot;</span>
+<a name="l00030"></a><a class="code" href="_solitaire_8h.html#a8d23feea868a983c8c2b661e1e16972f">00030</a> <span class="preprocessor"></span><span class="preprocessor">    #define RED  &quot;\033[22;31m&quot;</span>
+<a name="l00031"></a><a class="code" href="_solitaire_8h.html#acfbc006ea433ad708fdee3e82996e721">00031</a> <span class="preprocessor"></span><span class="preprocessor">    #define GREEN  &quot;\033[22;32m&quot;</span>
+<a name="l00032"></a><a class="code" href="_solitaire_8h.html#abf681265909adf3d3e8116c93c0ba179">00032</a> <span class="preprocessor"></span><span class="preprocessor">    #define YELLOW  &quot;\033[22;33m&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor"></span>
+<a name="l00034"></a><a class="code" href="_solitaire_8h.html#a5bc410b99375860e54cee3f4bfe4b08e">00034</a> <span class="preprocessor">    #define RESETCOLOR &quot;\033[0m&quot;</span>
+<a name="l00035"></a>00035 <span class="preprocessor"></span><span class="preprocessor">#endif</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span>
+<a name="l00037"></a>00037 <span class="preprocessor">#pragma warning( disable : 4290 )// Une fonction est dÃ©clarÃ©e avec une spÃ©cification d&#39;exception (voir la mÃ©thode </span>
+<a name="l00038"></a>00038 <span class="preprocessor"></span><span class="comment">// ajouter(), ce que Visual Studio accepte mais n&#39;implÃ©mente pas. Le code avec spÃ©cification d&#39;exception ignorÃ© lors</span>
+<a name="l00039"></a>00039 <span class="comment">//de la compilation peut nÃ©cessiter une nouvelle compilation et Ã©dition de liens pour pouvoir Ãªtre </span>
+<a name="l00040"></a>00040 <span class="comment">//rÃ©utilisÃ© dans des versions ultÃ©rieures prenant en charge les spÃ©cifications d&#39;exception. </span>
+<a name="l00041"></a>00041 <span class="comment">//Vous pouvez Ã©viter cet avertissement par le pragma warning (disable : 4290) </span>
+<a name="l00042"></a>00042 
+<a name="l00043"></a>00043 <span class="keyword">namespace </span>tp
+<a name="l00044"></a>00044 {
+<a name="l00045"></a>00045 
+<a name="l00051"></a><a class="code" href="classtp_1_1_solitaire.html">00051</a>     <span class="keyword">class </span><a class="code" href="classtp_1_1_solitaire.html" title="Classe contenant la logique du jeu solitaire.">Solitaire</a> {
+<a name="l00052"></a>00052     <span class="keyword">public</span>:
+<a name="l00058"></a>00058         <a class="code" href="classtp_1_1_solitaire.html#ad263c1a044bb4cfec377b093b0ad8a7c" title="Constructeur par dÃ©faut.">Solitaire</a>();
+<a name="l00059"></a>00059 
+<a name="l00067"></a>00067         <a class="code" href="classtp_1_1_solitaire.html#ad263c1a044bb4cfec377b093b0ad8a7c" title="Constructeur par dÃ©faut.">Solitaire</a>(<span class="keyword">const</span> <a class="code" href="classtp_1_1_solitaire.html" title="Classe contenant la logique du jeu solitaire.">Solitaire</a>&amp;) <span class="keywordflow">throw</span>(std::bad_alloc);  
+<a name="l00068"></a>00068 
+<a name="l00074"></a>00074         <a class="code" href="classtp_1_1_solitaire.html#abc6b3325a7432c1d782f3aa94c41e053" title="Destructeur.">~Solitaire</a>();
+<a name="l00075"></a>00075         <span class="comment">//Surcharge d&#39;opÃ©rateurs</span>
+<a name="l00076"></a>00076 
+<a name="l00084"></a>00084         <span class="keyword">const</span> <a class="code" href="classtp_1_1_solitaire.html" title="Classe contenant la logique du jeu solitaire.">Solitaire</a>&amp; <a class="code" href="classtp_1_1_solitaire.html#afea2a2f2c4c79ceae168d2ddd101ab4d" title="Surcharger l&#39;opÃ©rateur =.">operator=</a>(<span class="keyword">const</span> <a class="code" href="classtp_1_1_solitaire.html" title="Classe contenant la logique du jeu solitaire.">Solitaire</a>&amp;) <span class="keywordflow">throw</span> (std::bad_alloc);
+<a name="l00085"></a>00085 
+<a name="l00091"></a>00091         <span class="keyword">friend</span> std::ostream&amp; <a class="code" href="classtp_1_1_solitaire.html#a731e58311ad8569cd773fde7a49ecb0e" title="Surcharge de l&#39;opÃ©rateur &lt;&lt;.">operator &lt;&lt; </a>(std::ostream&amp; p_f, <span class="keyword">const</span> <a class="code" href="classtp_1_1_solitaire.html" title="Classe contenant la logique du jeu solitaire.">Solitaire</a>&amp; p_l);
+<a name="l00092"></a>00092 
+<a name="l00093"></a>00093     <span class="keyword">public</span>:
+<a name="l00097"></a>00097         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#a2b875a04664858ef9ba537e0e9b991db" title="Fait avancer le talon d&#39;une carte, c&#39;est-Ã -dire prend la premiÃ¨re et la place Ã  la fin du talon...">avancerTalon</a>(); 
+<a name="l00098"></a>00098 
+<a name="l00105"></a>00105         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#a5174ea0b69bb089451c32d59114f2430" title="DÃ©place p_nbCartes cartes Ã  partir de la colonne p_colonneSource vers la colonne p_colonneDestinati...">deplacerColonneAColonne</a>( <span class="keywordtype">int</span> p_colonneSource, <span class="keywordtype">int</span> p_colonneDestination, <span class="keywordtype">int</span> p_nbCartes) <span class="keywordflow">throw</span> (std::runtime_error);
+<a name="l00106"></a>00106 
+<a name="l00113"></a>00113         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#adcdc5b2ff242cdcacdb4421f9e2c7671" title="DÃ©place la carte du dessus du talon vers la colonne spÃ©cifiÃ©e par &quot;p_colonneDestination&quot;.">deplacerTalonAColonne</a> ( <span class="keywordtype">int</span> p_colonneDestination ) <span class="keywordflow">throw</span>(std::runtime_error);
+<a name="l00114"></a>00114 
+<a name="l00121"></a>00121         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#a35fd87813f223fe41014fa3fd82dd99b" title="DÃ©place la carte du dessus du talon vers la pile spÃ©cifiÃ©e par &quot;p_pileDestination&quot;.">deplacerTalonAPile</a> ( <span class="keywordtype">int</span> p_pileDestination ) <span class="keywordflow">throw</span> (std::runtime_error);
+<a name="l00122"></a>00122 
+<a name="l00130"></a>00130         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#a4fa6049bda7fa2851650b07473724b85" title="DÃ©place la derniÃ¨re carte de la colonne spÃ©cifiÃ©e par &quot;p_colonneSource&quot; vers la pile spÃ©cifiÃ©e ...">deplacerColonneAPile</a> ( <span class="keywordtype">int</span> p_colonneSource, <span class="keywordtype">int</span> p_pileDestination) <span class="keywordflow">throw</span> (std::runtime_error);
+<a name="l00131"></a>00131         
+<a name="l00137"></a>00137         <span class="keywordtype">bool</span>    <a class="code" href="classtp_1_1_solitaire.html#a960cfcc78d5c3f382f0dce963c36e1fa" title="VÃ©rifie si le joueur a gagnÃ©:">verifieGagne</a> ( ) <span class="keyword">const</span>;
+<a name="l00138"></a>00138 
+<a name="l00144"></a>00144         std::string <a class="code" href="classtp_1_1_solitaire.html#ae87fb5eaba1a2d45b9d3ff2eec99ce31" title="retourne l&#39;Ã©tat du jeu">reqEtatJeu</a> ( ) <span class="keyword">const</span>;
+<a name="l00145"></a>00145     <span class="keyword">private</span>:
+<a name="l00149"></a>00149         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#ab6aa6a46fff5190914b2a5298c865411" title="mÃ©lange le paquet de carte, distribue les 7 colonnes de cartes, init les piles">_init</a>();
+<a name="l00150"></a>00150 
+<a name="l00154"></a>00154         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#a7708bec6b316c80f4fdc04bab273a8ff" title="RÃ©alise une copie profonde d&#39;un solitaire.">_copie</a>(<span class="keyword">const</span> <a class="code" href="classtp_1_1_solitaire.html" title="Classe contenant la logique du jeu solitaire.">Solitaire</a>&amp;);
+<a name="l00155"></a>00155 
+<a name="l00159"></a>00159         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#ae5e58795dafc6814dfc63cb5895e691e" title="DÃ©truit l&#39;objet.">_detruire</a>();
+<a name="l00160"></a>00160 
+<a name="l00164"></a>00164         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#ae6281ea0a9bb5ff9b299ee8beae03a7f" title="initialise les cartes du talon">_initTalon</a>();
+<a name="l00165"></a>00165 
+<a name="l00169"></a>00169         <span class="keywordtype">void</span>    <a class="code" href="classtp_1_1_solitaire.html#ac8d2d6b4e07802655cb39f3c194b73bf" title="initialise les cartes du talon">_initColonnes</a>();
+<a name="l00170"></a>00170     <span class="keyword">protected</span>:
+<a name="l00171"></a><a class="code" href="classtp_1_1_solitaire.html#a0950928b601368dbdc8e04977dbb258a">00171</a>         <a class="code" href="classtp_1_1_file.html">File&lt;Carte&gt;</a> <a class="code" href="classtp_1_1_solitaire.html#a0950928b601368dbdc8e04977dbb258a">m_talon</a>;
+<a name="l00172"></a><a class="code" href="classtp_1_1_solitaire.html#a37164cabd889226b3c7a3c52e8b26d32">00172</a>         <a class="code" href="classtp_1_1_colonne_cartes.html" title="classe representant une colonne de cartes du jeu solitaire">ColonneCartes</a> <a class="code" href="classtp_1_1_solitaire.html#a37164cabd889226b3c7a3c52e8b26d32">m_colonnes</a>[7];
+<a name="l00173"></a><a class="code" href="classtp_1_1_solitaire.html#a340b00efdee37a352fdc6ad3ccfce6ec">00173</a>         <a class="code" href="classtp_1_1_pile.html">Pile&lt;Carte&gt;</a> <a class="code" href="classtp_1_1_solitaire.html#a340b00efdee37a352fdc6ad3ccfce6ec">m_piles</a>[4];
+<a name="l00174"></a>00174     };
+<a name="l00175"></a>00175 }
+<a name="l00176"></a>00176 
+<a name="l00177"></a>00177 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Octobre 3 2013 11:19:33 pour Solitaire - par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

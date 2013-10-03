@@ -1,0 +1,141 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Solitaire -:  Fichier source de Carte.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Solitaire -
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Carte.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_carte_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 <span class="preprocessor">#ifndef __CARTE_H</span>
+<a name="l00004"></a>00004 <span class="preprocessor"></span><span class="preprocessor"># define __CARTE_H</span>
+<a name="l00005"></a>00005 <span class="preprocessor"></span>
+<a name="l00006"></a>00006 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00007"></a>00007 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00008"></a>00008 
+<a name="l00009"></a>00009 <span class="preprocessor">#ifndef __COLOR__</span>
+<a name="l00010"></a><a class="code" href="_carte_8h.html#aacd5164ed9c9701c9073d167eabfe638">00010</a> <span class="preprocessor"></span>  <span class="keyword">const</span> std::string <a class="code" href="_carte_8h.html#aacd5164ed9c9701c9073d167eabfe638">BLACK</a> = <span class="stringliteral">&quot;\033[22;30m&quot;</span>;
+<a name="l00011"></a><a class="code" href="_carte_8h.html#a1e3de85aa0ad921f6984f3aef7361f99">00011</a>   <span class="keyword">const</span> std::string <a class="code" href="_carte_8h.html#a1e3de85aa0ad921f6984f3aef7361f99">RED</a> = <span class="stringliteral">&quot;\033[22;31m&quot;</span>;
+<a name="l00012"></a><a class="code" href="_carte_8h.html#ace790543ffe3663a896a5f074bd2a3ef">00012</a>   <span class="keyword">const</span> std::string <a class="code" href="_carte_8h.html#ace790543ffe3663a896a5f074bd2a3ef">GREEN</a> = <span class="stringliteral">&quot;\033[22;32m&quot;</span>;
+<a name="l00013"></a><a class="code" href="_carte_8h.html#a8bc779337e61d3ab6ad13f81e102f327">00013</a>   <span class="keyword">const</span> std::string <a class="code" href="_carte_8h.html#a8bc779337e61d3ab6ad13f81e102f327">YELLOW</a> = <span class="stringliteral">&quot;\033[22;33m&quot;</span>;
+<a name="l00014"></a>00014 
+<a name="l00015"></a><a class="code" href="_carte_8h.html#a2a0824e4adc08b61645753f00f99e795">00015</a>   <span class="keyword">const</span> std::string <a class="code" href="_carte_8h.html#a2a0824e4adc08b61645753f00f99e795">RESETCOLOR</a> = <span class="stringliteral">&quot;\033[0m&quot;</span>;
+<a name="l00016"></a>00016 <span class="preprocessor">#endif </span><span class="comment">/* !__COLOR__ */</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="keyword">namespace </span>tp
+<a name="l00019"></a>00019 {
+<a name="l00020"></a>00020 
+<a name="l00025"></a><a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fe">00025</a> <span class="keyword">enum</span> <a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fe" title="la sorte de la carte">Sorte</a>
+<a name="l00026"></a>00026 {
+<a name="l00027"></a><a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">00027</a>   <a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a> = 0, 
+<a name="l00028"></a><a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fea4bce678ae2a5033540dca0d824330d2d">00028</a>   <a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fea4bce678ae2a5033540dca0d824330d2d" title="pique">COEUR</a>, 
+<a name="l00029"></a><a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feac0d61939df7ea1ef3108f6dcb0cd0553">00029</a>   <a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feac0d61939df7ea1ef3108f6dcb0cd0553" title="coeur">CARREAU</a>, 
+<a name="l00030"></a><a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaaef976b677aea6681e7074345d97a4ae">00030</a>   <a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaaef976b677aea6681e7074345d97a4ae" title="carreau">TREFLE</a>, 
+<a name="l00031"></a>00031 };
+<a name="l00032"></a>00032 
+<a name="l00037"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63">00037</a> <span class="keyword">enum</span> <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63" title="la valeur de la carte">Valeur</a>
+<a name="l00038"></a>00038 {
+<a name="l00039"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">00039</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a> = 0, 
+<a name="l00040"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a50864c71bc5396cd7b9d70658ebb1406">00040</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a50864c71bc5396cd7b9d70658ebb1406" title="as">DEUX</a>, 
+<a name="l00041"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a20c84f9da8d1c10c5edb08eedbd5d980">00041</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a20c84f9da8d1c10c5edb08eedbd5d980" title="2">TROIS</a>, 
+<a name="l00042"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a939b06bc205188ff972dc12450b4acd6">00042</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a939b06bc205188ff972dc12450b4acd6" title="3">QUATRE</a>, 
+<a name="l00043"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a408816eab32e1a7df865f09a7b5a00ad">00043</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a408816eab32e1a7df865f09a7b5a00ad" title="4">CINQ</a>, 
+<a name="l00044"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63abe6e81424e1c68883384e9994d170b58">00044</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63abe6e81424e1c68883384e9994d170b58" title="5">SIX</a>, 
+<a name="l00045"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a68c2b7591e3118125de6b9d27f6730a9">00045</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a68c2b7591e3118125de6b9d27f6730a9" title="6">SEPT</a>, 
+<a name="l00046"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63ae43b1f4147b6ad21ce50818122bae889">00046</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63ae43b1f4147b6ad21ce50818122bae889" title="7">HUIT</a>, 
+<a name="l00047"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a79b25c2a56763273a19b26b5f0a8ad2c">00047</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a79b25c2a56763273a19b26b5f0a8ad2c" title="8">NEUF</a>, 
+<a name="l00048"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a704a49771019c56dfdfc8197bae77d31">00048</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a704a49771019c56dfdfc8197bae77d31" title="9">DIX</a>, 
+<a name="l00049"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63adaa611f639d5c1aa1e3233c7f80872c6">00049</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63adaa611f639d5c1aa1e3233c7f80872c6" title="10">VALET</a>, 
+<a name="l00050"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a7e0d436d1c405fdf3a85322968a803d2">00050</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a7e0d436d1c405fdf3a85322968a803d2" title="valet">DAME</a>, 
+<a name="l00051"></a><a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a5d7a50876ec2a386b84a99ee8db0c4bf">00051</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a5d7a50876ec2a386b84a99ee8db0c4bf" title="dame">ROI</a>, 
+<a name="l00052"></a>00052 };
+<a name="l00053"></a>00053 
+<a name="l00062"></a><a class="code" href="classtp_1_1_carte.html">00062</a> <span class="keyword">class </span><a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a>
+<a name="l00063"></a>00063 {
+<a name="l00064"></a>00064  <span class="keyword">public</span>:
+<a name="l00065"></a>00065   <a class="code" href="classtp_1_1_carte.html#a54396b5dbdd5257bef7b26b2ac0b6252">Carte</a>(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fe" title="la sorte de la carte">Sorte</a> = <a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3feaa725fa4fa5b777692b598e04c46c58b6">PIQUE</a>, <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63" title="la valeur de la carte">Valeur</a> = <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a852cf209c2aca6614da2fb694fb3b9e6">AS</a>);
+<a name="l00066"></a>00066 
+<a name="l00067"></a>00067  <span class="keyword">public</span>:
+<a name="l00068"></a>00068   <a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fe" title="la sorte de la carte">Sorte</a> <a class="code" href="classtp_1_1_carte.html#a5ca8a889b6a7c20ba22450f33c0ad584">reqSorte</a>() <span class="keyword">const</span>;
+<a name="l00069"></a>00069   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63" title="la valeur de la carte">Valeur</a> <a class="code" href="classtp_1_1_carte.html#a0c09ca9902a59d70cf9becb7cd901051">reqValeur</a>() <span class="keyword">const</span>;
+<a name="l00070"></a>00070   <span class="keywordtype">void</span> <a class="code" href="classtp_1_1_carte.html#a9917d50ee8e31902ab5edbdf65bc3fc9">asgSorte</a>(<a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fe" title="la sorte de la carte">Sorte</a>);
+<a name="l00071"></a>00071   <span class="keywordtype">void</span> <a class="code" href="classtp_1_1_carte.html#a961f29e87370ba7861c7f35380ad8795">asgValeur</a>(<a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63" title="la valeur de la carte">Valeur</a>);
+<a name="l00072"></a>00072 
+<a name="l00073"></a>00073  <span class="keyword">public</span>:
+<a name="l00074"></a>00074   <span class="keywordtype">bool</span> <a class="code" href="classtp_1_1_carte.html#a5edc818d8fd91d6fc6b6cb5380fb8382">estSuivante</a>(<span class="keyword">const</span> <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> &amp;) <span class="keyword">const</span>;
+<a name="l00075"></a>00075   <span class="keywordtype">bool</span> <a class="code" href="classtp_1_1_carte.html#a42c9d0771e130773293b6ecc94cc9818">peutEmpiler</a>(<span class="keyword">const</span> <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> &amp;) <span class="keyword">const</span>;
+<a name="l00076"></a>00076 
+<a name="l00077"></a>00077  <span class="keyword">public</span>:
+<a name="l00078"></a>00078   <span class="keyword">friend</span> std::ostream &amp;<a class="code" href="classtp_1_1_carte.html#aa9c62cee19788360d0ba6c704c5c7a8e">operator&lt;&lt;</a>(std::ostream &amp;, <span class="keyword">const</span> <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> &amp;);
+<a name="l00079"></a>00079 
+<a name="l00080"></a>00080  <span class="keyword">private</span>:
+<a name="l00081"></a><a class="code" href="classtp_1_1_carte.html#a528a8bdb043b67088d1d283b620ec24d">00081</a>   <a class="code" href="namespacetp.html#a46438f6a7b34ccc4c4d81b986aa5c3fe" title="la sorte de la carte">Sorte</a> <a class="code" href="classtp_1_1_carte.html#a528a8bdb043b67088d1d283b620ec24d">m_sorte</a>;
+<a name="l00082"></a><a class="code" href="classtp_1_1_carte.html#af5d8ff64742c78a9eaf6928ab3faef60">00082</a>   <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63" title="la valeur de la carte">Valeur</a> <a class="code" href="classtp_1_1_carte.html#af5d8ff64742c78a9eaf6928ab3faef60">m_valeur</a>;
+<a name="l00083"></a>00083 };
+<a name="l00084"></a>00084 
+<a name="l00085"></a>00085 };
+<a name="l00086"></a>00086 
+<a name="l00087"></a>00087 
+<a name="l00088"></a>00088 <span class="preprocessor">#endif </span><span class="comment">/* !__CARTE_H */</span>
+</pre></div></div><!-- contents -->
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Octobre 3 2013 11:19:33 pour Solitaire - par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

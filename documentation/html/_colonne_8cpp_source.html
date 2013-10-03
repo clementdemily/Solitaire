@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Solitaire -:  Fichier source de Colonne.cpp</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Solitaire -
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Colonne.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_colonne_8cpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00002"></a>00002 
+<a name="l00003"></a>00003 <span class="preprocessor">#include &quot;<a class="code" href="_colonne_8h.html" title="Classe dÃ©finissant une colonne de carte.">Colonne.h</a>&quot;</span>
+<a name="l00004"></a>00004 
+<a name="l00005"></a>00005 <span class="keyword">namespace </span>tp
+<a name="l00006"></a>00006 {
+<a name="l00007"></a>00007 
+<a name="l00011"></a><a class="code" href="classtp_1_1_colonne_cartes.html#a449f54e710153a2d8a8ae378f89d586a">00011</a> <a class="code" href="classtp_1_1_colonne_cartes.html#a449f54e710153a2d8a8ae378f89d586a">ColonneCartes::ColonneCartes</a>()
+<a name="l00012"></a>00012   : m_nbCartesVisibles(0)
+<a name="l00013"></a>00013 {
+<a name="l00014"></a>00014 
+<a name="l00015"></a>00015 }
+<a name="l00016"></a>00016 
+<a name="l00022"></a><a class="code" href="classtp_1_1_colonne_cartes.html#a70d284c231bbacf29b6f060b0f730218">00022</a> <span class="keywordtype">int</span> <a class="code" href="classtp_1_1_colonne_cartes.html#a70d284c231bbacf29b6f060b0f730218">ColonneCartes::getNbCartesVisibles</a>()<span class="keyword"> const</span>
+<a name="l00023"></a>00023 <span class="keyword"></span>{
+<a name="l00024"></a>00024   <span class="keywordflow">return</span> <a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a>;
+<a name="l00025"></a>00025 }
+<a name="l00026"></a>00026 
+<a name="l00032"></a><a class="code" href="classtp_1_1_colonne_cartes.html#ae53e834c4f93ef8d67c90e898173262e">00032</a> <span class="keyword">const</span> <a class="code" href="classtp_1_1_liste.html">Liste&lt;Carte&gt;</a> &amp;<a class="code" href="classtp_1_1_colonne_cartes.html#ae53e834c4f93ef8d67c90e898173262e">ColonneCartes::reqLesCartes</a>()<span class="keyword"> const</span>
+<a name="l00033"></a>00033 <span class="keyword"></span>{
+<a name="l00034"></a>00034   <span class="keywordflow">return</span> <a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>;
+<a name="l00035"></a>00035 }
+<a name="l00036"></a>00036 
+<a name="l00042"></a><a class="code" href="classtp_1_1_colonne_cartes.html#a59a342c472518f4d1c15b432b99141f2">00042</a> <span class="keywordtype">void</span> <a class="code" href="classtp_1_1_colonne_cartes.html#a59a342c472518f4d1c15b432b99141f2">ColonneCartes::initColonneCartes</a>(<a class="code" href="classtp_1_1_liste.html">Liste&lt;Carte&gt;</a> &amp;p_listeCartes)
+<a name="l00043"></a>00043 {
+<a name="l00044"></a>00044   <a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a> = p_listeCartes;
+<a name="l00045"></a>00045   <span class="keywordflow">if</span> (<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>() &gt; 0)
+<a name="l00046"></a>00046     <a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a> = 1;
+<a name="l00047"></a>00047 }
+<a name="l00048"></a>00048 
+<a name="l00057"></a><a class="code" href="classtp_1_1_colonne_cartes.html#aef6472e295c531e17552ad38da57c5a2">00057</a> <span class="keywordtype">void</span> <a class="code" href="classtp_1_1_colonne_cartes.html#aef6472e295c531e17552ad38da57c5a2">ColonneCartes::ajoute</a>(<span class="keyword">const</span> <a class="code" href="classtp_1_1_carte.html" title="classe representant une carte a jouer">Carte</a> &amp;p_carte)
+<a name="l00058"></a>00058 {
+<a name="l00059"></a>00059   <span class="keywordflow">if</span> ((<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>() == 0 &amp;&amp; p_carte.<a class="code" href="classtp_1_1_carte.html#a0c09ca9902a59d70cf9becb7cd901051">reqValeur</a>() == <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a5d7a50876ec2a386b84a99ee8db0c4bf" title="dame">ROI</a>)
+<a name="l00060"></a>00060       || (<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>() &gt; 0 &amp;&amp; <a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#a7a4ba387d5fd3750951c187847676ffb">element</a>(1).<a class="code" href="classtp_1_1_carte.html#a42c9d0771e130773293b6ecc94cc9818">peutEmpiler</a>(p_carte)))
+<a name="l00061"></a>00061   {
+<a name="l00062"></a>00062     <a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#a31eb4dbcd4801fdb7b30b3e25de288bb">ajouter</a>(p_carte, 1);
+<a name="l00063"></a>00063     ++<a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a>;
+<a name="l00064"></a>00064   }
+<a name="l00065"></a>00065   <span class="keywordflow">else</span>
+<a name="l00066"></a>00066     <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;ajoute() : Impossible d&#39;ajouter dans la colonne&quot;</span>);
+<a name="l00067"></a>00067 }
+<a name="l00068"></a>00068 
+<a name="l00078"></a><a class="code" href="classtp_1_1_colonne_cartes.html#ae103e65b0ef1d4f459600932942f9ef2">00078</a> <span class="keywordtype">void</span> <a class="code" href="classtp_1_1_colonne_cartes.html#ae103e65b0ef1d4f459600932942f9ef2">ColonneCartes::deplacePaquet</a>(<a class="code" href="classtp_1_1_colonne_cartes.html" title="classe representant une colonne de cartes du jeu solitaire">ColonneCartes</a> &amp;p_destination, <span class="keywordtype">int</span> p_nombreCartes)
+<a name="l00079"></a>00079 {
+<a name="l00080"></a>00080   <span class="keywordflow">if</span> (p_nombreCartes &gt; 0 &amp;&amp; p_nombreCartes &lt;= <a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a>
+<a name="l00081"></a>00081       &amp;&amp; ((p_destination.<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>() == 0 &amp;&amp; <a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#a7a4ba387d5fd3750951c187847676ffb">element</a>(p_nombreCartes).<a class="code" href="classtp_1_1_carte.html#a0c09ca9902a59d70cf9becb7cd901051">reqValeur</a>() == <a class="code" href="namespacetp.html#a9711cb844f6ba84cf9c12047e1caee63a5d7a50876ec2a386b84a99ee8db0c4bf" title="dame">ROI</a>)
+<a name="l00082"></a>00082         || (p_destination.<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>() &gt; 0 &amp;&amp; p_destination.<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#a7a4ba387d5fd3750951c187847676ffb">element</a>(1).<a class="code" href="classtp_1_1_carte.html#a42c9d0771e130773293b6ecc94cc9818">peutEmpiler</a>(<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#a7a4ba387d5fd3750951c187847676ffb">element</a>(p_nombreCartes)))))
+<a name="l00083"></a>00083   {
+<a name="l00084"></a>00084     <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; p_nombreCartes != i; --p_nombreCartes)
+<a name="l00085"></a>00085     {
+<a name="l00086"></a>00086       p_destination.<a class="code" href="classtp_1_1_colonne_cartes.html#aef6472e295c531e17552ad38da57c5a2">ajoute</a>(<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#a7a4ba387d5fd3750951c187847676ffb">element</a>(p_nombreCartes));
+<a name="l00087"></a>00087       <a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#a6d29d156f43f026ac9714709a744dfc9">enleverPos</a>(p_nombreCartes);
+<a name="l00088"></a>00088       --<a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a>;
+<a name="l00089"></a>00089     }
+<a name="l00090"></a>00090     <span class="keywordflow">if</span> (<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>() &gt; 0 &amp;&amp; <a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a> == 0)
+<a name="l00091"></a>00091       <a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a> = 1;
+<a name="l00092"></a>00092   }
+<a name="l00093"></a>00093   <span class="keywordflow">else</span>
+<a name="l00094"></a>00094     <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;deplacePaquet() : Deplacement impossible&quot;</span>);
+<a name="l00095"></a>00095 }
+<a name="l00096"></a>00096 
+<a name="l00100"></a><a class="code" href="classtp_1_1_colonne_cartes.html#a9a601a8c06505f1181749c0c63154aa0">00100</a> <span class="keywordtype">void</span> <a class="code" href="classtp_1_1_colonne_cartes.html#a9a601a8c06505f1181749c0c63154aa0">ColonneCartes::supprimerDerniereCarte</a>()
+<a name="l00101"></a>00101 {
+<a name="l00102"></a>00102   <span class="keywordflow">if</span> (<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>() &gt; 0)
+<a name="l00103"></a>00103   {
+<a name="l00104"></a>00104     <a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#a6d29d156f43f026ac9714709a744dfc9">enleverPos</a>(1);
+<a name="l00105"></a>00105     --<a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a>;
+<a name="l00106"></a>00106     <span class="keywordflow">if</span> (<a class="code" href="classtp_1_1_colonne_cartes.html#a64f0cb7f15f51d7768beca6244d7de0a">m_lesCartes</a>.<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>() &gt; 0 &amp;&amp; <a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a> == 0)
+<a name="l00107"></a>00107       ++<a class="code" href="classtp_1_1_colonne_cartes.html#a4fa33b0a3f372daa7dd5686ba2e01d81">m_nbCartesVisibles</a>;
+<a name="l00108"></a>00108   }
+<a name="l00109"></a>00109 }
+<a name="l00110"></a>00110 
+<a name="l00119"></a><a class="code" href="namespacetp.html#aceef141826de829125bbf2a86b904cb7">00119</a> std::ostream &amp;<a class="code" href="namespacetp.html#a16b20d3d11bee4d1141c57e9e8df7aa8">operator&lt;&lt;</a>(std::ostream &amp;p_os, <span class="keyword">const</span> <a class="code" href="classtp_1_1_colonne_cartes.html" title="classe representant une colonne de cartes du jeu solitaire">ColonneCartes</a> &amp;p_colonneCartes)
+<a name="l00120"></a>00120 {
+<a name="l00121"></a>00121   <span class="keywordflow">if</span> (p_colonneCartes.<a class="code" href="classtp_1_1_colonne_cartes.html#ae53e834c4f93ef8d67c90e898173262e">reqLesCartes</a>().<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>() == 0)
+<a name="l00122"></a>00122     p_os &lt;&lt; <span class="stringliteral">&quot;-&quot;</span>;
+<a name="l00123"></a>00123   <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = p_colonneCartes.<a class="code" href="classtp_1_1_colonne_cartes.html#ae53e834c4f93ef8d67c90e898173262e">reqLesCartes</a>().<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>(); i &gt; 0; --i)
+<a name="l00124"></a>00124   {
+<a name="l00125"></a>00125     <span class="keywordflow">if</span> (i &lt; p_colonneCartes.<a class="code" href="classtp_1_1_colonne_cartes.html#ae53e834c4f93ef8d67c90e898173262e">reqLesCartes</a>().<a class="code" href="classtp_1_1_liste.html#aeeb54dad73348922331642d2971745a0">taille</a>())
+<a name="l00126"></a>00126       p_os &lt;&lt; <span class="stringliteral">&quot; &quot;</span>;
+<a name="l00127"></a>00127     <span class="keywordflow">if</span> (i &gt; p_colonneCartes.<a class="code" href="classtp_1_1_colonne_cartes.html#a70d284c231bbacf29b6f060b0f730218">getNbCartesVisibles</a>())
+<a name="l00128"></a>00128       p_os &lt;&lt; <span class="stringliteral">&quot;?&quot;</span>;
+<a name="l00129"></a>00129     <span class="keywordflow">else</span>
+<a name="l00130"></a>00130       p_os &lt;&lt; p_colonneCartes.<a class="code" href="classtp_1_1_colonne_cartes.html#ae53e834c4f93ef8d67c90e898173262e">reqLesCartes</a>().<a class="code" href="classtp_1_1_liste.html#a7a4ba387d5fd3750951c187847676ffb">element</a>(i);
+<a name="l00131"></a>00131   }
+<a name="l00132"></a>00132 
+<a name="l00133"></a>00133   <span class="keywordflow">return</span> p_os;
+<a name="l00134"></a>00134 }
+<a name="l00135"></a>00135 
+<a name="l00136"></a>00136 };
+</pre></div></div><!-- contents -->
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Octobre 3 2013 11:19:33 pour Solitaire - par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>

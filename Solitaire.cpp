@@ -54,7 +54,7 @@ namespace tp
     std::ostream& operator << (std::ostream& p_f, const Solitaire& p_l)
     {
       (void)p_l;
-      p_f << "salut";
+      p_f << p_l.reqEtatJeu();
       return (p_f);
     }
 

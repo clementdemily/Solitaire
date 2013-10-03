@@ -1,0 +1,23 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="tp::Solitaire",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_piles" ,fontname="FreeSans"];
+  Node2 [label="tp::Pile\< Carte \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtp_1_1_pile.html"];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_debut" ,fontname="FreeSans"];
+  Node3 [label="tp::Pile\< T \>::Noeud",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtp_1_1_pile_1_1_noeud.html",tooltip="classe interne reprÃ©sentant un noeud typique"];
+  Node3 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_suivant" ,fontname="FreeSans"];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_talon" ,fontname="FreeSans"];
+  Node4 [label="tp::File\< Carte \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtp_1_1_file.html"];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_debut" ,fontname="FreeSans"];
+  Node5 [label="tp::File\< T \>::Noeud",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtp_1_1_file_1_1_noeud.html",tooltip="classe interne reprÃ©sentant un noeud typique"];
+  Node5 -> Node5 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_suivant" ,fontname="FreeSans"];
+  Node6 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_colonnes" ,fontname="FreeSans"];
+  Node6 [label="tp::ColonneCartes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtp_1_1_colonne_cartes.html",tooltip="classe representant une colonne de cartes du jeu solitaire"];
+  Node7 -> Node6 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" m_lesCartes" ,fontname="FreeSans"];
+  Node7 [label="tp::Liste\< Carte \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtp_1_1_liste.html"];
+  Node8 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" dernier" ,fontname="FreeSans"];
+  Node8 [label="tp::Liste\< T \>::Noeud",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classtp_1_1_liste_1_1_noeud.html",tooltip="classe interne representant un noeud typique"];
+  Node8 -> Node8 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" suivant" ,fontname="FreeSans"];
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<title>Solitaire -:  Fichier source de Pile.h</title>
+
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+
+
+
+</head>
+<body>
+<div id="top"><!-- do not remove this div! -->
+
+
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  
+  
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">Solitaire -
+   &#160;<span id="projectnumber">1.0</span>
+   </div>
+   
+  </td>
+  
+  
+  
+ </tr>
+ </tbody>
+</table>
+</div>
+
+<!-- Généré par Doxygen 1.7.6.1 -->
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="namespaces.html"><span>Espaces&#160;de&#160;nommage</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+      <li><a href="globals.html"><span>Membres&#160;de&#160;fichier</span></a></li>
+    </ul>
+  </div>
+</div>
+<div class="header">
+  <div class="headertitle">
+<div class="title">Pile.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="_pile_8h.html">Aller à la documentation de ce fichier.</a><div class="fragment"><pre class="fragment"><a name="l00001"></a>00001 
+<a name="l00011"></a>00011 <span class="preprocessor">#ifndef _PILE__H</span>
+<a name="l00012"></a>00012 <span class="preprocessor"></span><span class="preprocessor">#define _PILE__H</span>
+<a name="l00013"></a>00013 <span class="preprocessor"></span>
+<a name="l00014"></a>00014 <span class="preprocessor">#include &lt;iostream&gt;</span>
+<a name="l00015"></a>00015 <span class="preprocessor"># include &lt;stdexcept&gt;</span>   <span class="comment">// Pour les exceptions standards</span>
+<a name="l00016"></a>00016 <span class="preprocessor">#include &lt;string&gt;</span>
+<a name="l00017"></a>00017 
+<a name="l00018"></a>00018 <span class="preprocessor">#pragma warning( disable : 4290 )// Une fonction est dÃ©clarÃ©e avec une spÃ©cification d&#39;exception (voir la mÃ©thode </span>
+<a name="l00019"></a>00019 <span class="preprocessor"></span><span class="comment">// ajouter(), ce que Visual Studio accepte mais n&#39;implÃ©mente pas. Le code avec spÃ©cification d&#39;exception ignorÃ© lors</span>
+<a name="l00020"></a>00020 <span class="comment">//de la compilation peut nÃ©cessiter une nouvelle compilation et Ã©dition de liens pour pouvoir Ãªtre </span>
+<a name="l00021"></a>00021 <span class="comment">//rÃ©utilisÃ© dans des versions ultÃ©rieures prenant en charge les spÃ©cifications d&#39;exception. </span>
+<a name="l00022"></a>00022 <span class="comment">//Vous pouvez Ã©viter cet avertissement par le pragma warning (disable : 4290) </span>
+<a name="l00023"></a>00023 
+<a name="l00024"></a>00024 <span class="keyword">namespace </span>tp
+<a name="l00025"></a>00025 {
+<a name="l00026"></a>00026 
+<a name="l00035"></a>00035     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;
+<a name="l00036"></a><a class="code" href="classtp_1_1_pile.html">00036</a>     <span class="keyword">class </span><a class="code" href="classtp_1_1_pile.html" title="classe gÃ©nÃ©rique reprÃ©sentant une Pile ordonnÃ©e">Pile</a> {
+<a name="l00037"></a>00037     <span class="keyword">public</span>:
+<a name="l00038"></a>00038         <span class="comment">//Constructeurs</span>
+<a name="l00039"></a>00039 
+<a name="l00045"></a>00045         <a class="code" href="classtp_1_1_pile.html#a5ef7ebb68ea1c8d9fecfc645f4a40760" title="Constructeur par dÃ©faut.">Pile</a>(); 
+<a name="l00046"></a>00046 
+<a name="l00054"></a>00054         <a class="code" href="classtp_1_1_pile.html#a5ef7ebb68ea1c8d9fecfc645f4a40760" title="Constructeur par dÃ©faut.">Pile</a>(<span class="keyword">const</span> <a class="code" href="classtp_1_1_pile.html" title="classe gÃ©nÃ©rique reprÃ©sentant une Pile ordonnÃ©e">Pile</a>&amp;) <span class="keywordflow">throw</span>(std::bad_alloc);    
+<a name="l00055"></a>00055 
+<a name="l00061"></a>00061         <a class="code" href="classtp_1_1_pile.html#a08ff475036c42ac609e6468fa2b46b66" title="Destructeur.">~Pile</a>();                 
+<a name="l00062"></a>00062 
+<a name="l00063"></a>00063         <span class="comment">//Surcharge d&#39;opÃ©rateurs</span>
+<a name="l00064"></a>00064 
+<a name="l00072"></a>00072         <span class="keyword">const</span> <a class="code" href="classtp_1_1_pile.html" title="classe gÃ©nÃ©rique reprÃ©sentant une Pile ordonnÃ©e">Pile&lt;T&gt;</a>&amp; <a class="code" href="classtp_1_1_pile.html#a8a4fe0094443675db370df0e413aedb9" title="Surcharger l&#39;opÃ©rateur =.">operator = </a>(<span class="keyword">const</span> <a class="code" href="classtp_1_1_pile.html" title="classe gÃ©nÃ©rique reprÃ©sentant une Pile ordonnÃ©e">Pile&lt;T&gt;</a>&amp;) <span class="keywordflow">throw</span> (std::bad_alloc);
+<a name="l00073"></a>00073 
+<a name="l00079"></a>00079         <span class="keyword">template</span> &lt;<span class="keyword">class</span> U&gt; <span class="keyword">friend</span> std::ostream&amp; operator &lt;&lt; (std::ostream&amp; p_f, const Pile&lt;U&gt;&amp; p_l);
+<a name="l00080"></a>00080 
+<a name="l00081"></a>00081         <span class="comment">//Modificateurs</span>
+<a name="l00087"></a>00087 <span class="comment"></span>        <span class="keywordtype">void</span> <a class="code" href="classtp_1_1_pile.html#ad887c544f34c92e30b8f9fb2454cefb6" title="empiler un nouvel Ã©lÃ©ment dans la Pile">empiler</a>(<span class="keyword">const</span> T&amp;);
+<a name="l00088"></a>00088 
+<a name="l00096"></a>00096         T <a class="code" href="classtp_1_1_pile.html#ae4c349c7de8d00d566476c43c919f331" title="DÃ©Piler un Ã©lÃ©ment.">depiler</a>() <span class="keywordflow">throw</span>(std::logic_error);
+<a name="l00097"></a>00097 
+<a name="l00098"></a>00098         <span class="comment">//SÃ©lecteurs</span>
+<a name="l00099"></a>00099 
+<a name="l00106"></a>00106         <span class="keywordtype">int</span> <a class="code" href="classtp_1_1_pile.html#a1f7d644498bb77960ce6d9b824509073" title="Demander la taille de la Pile.">taille</a>() <span class="keyword">const</span>;  
+<a name="l00107"></a>00107 
+<a name="l00114"></a>00114         <span class="keywordtype">bool</span> <a class="code" href="classtp_1_1_pile.html#aa010c2723c94b10088a5b3f2b0f9e4fa" title="VÃ©rifier si la Pile est vide.">estVide</a>() <span class="keyword">const</span>;  
+<a name="l00115"></a>00115 
+<a name="l00122"></a>00122         <span class="keywordtype">bool</span> <a class="code" href="classtp_1_1_pile.html#ad156f05e084d0586eebefbd56e7cc1b5" title="Recherche d&#39;un Ã©lÃ©ment dans la Pile.">appartient</a>(<span class="keyword">const</span> T&amp;) <span class="keyword">const</span>;  
+<a name="l00123"></a>00123 
+<a name="l00134"></a>00134         <span class="keyword">const</span> T &amp; <a class="code" href="classtp_1_1_pile.html#aa1c33d3b2a8d17734c887d930a3da136" title="Retourner l&#39;Ã©lÃ©ment Ã  une certaine position.">element</a>(<span class="keywordtype">int</span>) <span class="keyword">const</span> <span class="keywordflow">throw</span>(std::range_error);  
+<a name="l00135"></a>00135 
+<a name="l00144"></a>00144         <span class="keywordtype">int</span> <a class="code" href="classtp_1_1_pile.html#a29559617197d78b7b28a3bc6bfae9e81" title="Retourner la position d&#39;un Ã©lÃ©ment.">position</a>(<span class="keyword">const</span> T&amp;) <span class="keyword">const</span> <span class="keywordflow">throw</span>(std::logic_error);  
+<a name="l00145"></a>00145 
+<a name="l00154"></a>00154         <span class="keyword">const</span> T&amp; <a class="code" href="classtp_1_1_pile.html#a5e3af522de852d10ca20fa48196afbb9" title="Retourner l&#39;Ã©lÃ©ment au dÃ©but de la Pile.">premier</a>() <span class="keyword">const</span> <span class="keywordflow">throw</span> (std::logic_error);  
+<a name="l00155"></a>00155 
+<a name="l00164"></a>00164         <span class="keyword">const</span> T&amp; <a class="code" href="classtp_1_1_pile.html#a62f45bddd46e1ca5f9083fd18550b2e9" title="Retourner l&#39;Ã©lÃ©ment au queue de la Pile.">dernier</a>() <span class="keyword">const</span> <span class="keywordflow">throw</span> (std::logic_error);   
+<a name="l00165"></a>00165 
+<a name="l00166"></a>00166 
+<a name="l00167"></a>00167     <span class="keyword">private</span>:        
+<a name="l00178"></a>00178         <span class="keyword">class </span><a class="code" href="classtp_1_1_pile_1_1_noeud.html" title="classe interne reprÃ©sentant un noeud typique">Noeud</a>;
+<a name="l00184"></a><a class="code" href="classtp_1_1_pile.html#a5e0369ee5bd4378f9fbad23fc8c80153">00184</a>         <span class="keyword">typedef</span> Noeud * <a class="code" href="classtp_1_1_pile.html#a5e0369ee5bd4378f9fbad23fc8c80153" title="DÃ©finition d&#39;un pointeur sur un Noeud.">elem</a>;
+<a name="l00185"></a>00185 
+<a name="l00186"></a><a class="code" href="classtp_1_1_pile_1_1_noeud.html">00186</a>         <span class="keyword">class </span><a class="code" href="classtp_1_1_pile_1_1_noeud.html" title="classe interne reprÃ©sentant un noeud typique">Noeud</a>{    
+<a name="l00187"></a>00187         <span class="keyword">public</span>:
+<a name="l00188"></a><a class="code" href="classtp_1_1_pile_1_1_noeud.html#aec4b9d72b8af1dc90c00fd8d73729e1a">00188</a>             T <a class="code" href="classtp_1_1_pile_1_1_noeud.html#aec4b9d72b8af1dc90c00fd8d73729e1a">m_el</a>;         
+<a name="l00189"></a><a class="code" href="classtp_1_1_pile_1_1_noeud.html#a6dcd1f881d446d5ca9641e1bfa08ab19">00189</a>             <a class="code" href="classtp_1_1_pile_1_1_noeud.html" title="classe interne reprÃ©sentant un noeud typique">elem</a>  <a class="code" href="classtp_1_1_pile_1_1_noeud.html#a6dcd1f881d446d5ca9641e1bfa08ab19">m_suivant</a>;    
+<a name="l00196"></a><a class="code" href="classtp_1_1_pile_1_1_noeud.html#a58e3c6dbf3bf843f38d82310f53b240a">00196</a>             <span class="keyword">explicit</span> <a class="code" href="classtp_1_1_pile_1_1_noeud.html#a58e3c6dbf3bf843f38d82310f53b240a" title="Constructeur de la classe Noeud.">Noeud</a> (<span class="keyword">const</span> T&amp; data_item, <a class="code" href="classtp_1_1_pile_1_1_noeud.html" title="classe interne reprÃ©sentant un noeud typique">Noeud</a> * next_ptr = 0) :                                                              
+<a name="l00197"></a>00197             <a class="code" href="classtp_1_1_pile_1_1_noeud.html#aec4b9d72b8af1dc90c00fd8d73729e1a">m_el</a>(data_item), <a class="code" href="classtp_1_1_pile_1_1_noeud.html#a6dcd1f881d446d5ca9641e1bfa08ab19">m_suivant</a>(next_ptr) {}
+<a name="l00198"></a>00198         };  
+<a name="l00199"></a>00199 
+<a name="l00200"></a><a class="code" href="classtp_1_1_pile.html#aa111ffec0de52c347de9e4eccef8fd61">00200</a>         <a class="code" href="classtp_1_1_pile.html#a5e0369ee5bd4378f9fbad23fc8c80153">elem</a> <a class="code" href="classtp_1_1_pile.html#aa111ffec0de52c347de9e4eccef8fd61">m_debut</a>;               
+<a name="l00201"></a><a class="code" href="classtp_1_1_pile.html#a6f776fe5798bd5b31663e6e6157b9524">00201</a>         <span class="keywordtype">int</span> <a class="code" href="classtp_1_1_pile.html#a6f776fe5798bd5b31663e6e6157b9524">m_cpt</a>;
+<a name="l00202"></a>00202 
+<a name="l00203"></a>00203 
+<a name="l00204"></a>00204         <span class="comment">//MÃ©thodes privÃ©es</span>
+<a name="l00205"></a>00205 
+<a name="l00211"></a>00211         <span class="keywordtype">void</span> <a class="code" href="classtp_1_1_pile.html#a5c6d6a524032332bf3da9a63c6b0dff0" title="Copier deux Piles.">_copier</a>( Noeud *) throw (std::bad_alloc);
+<a name="l00212"></a>00212 
+<a name="l00216"></a>00216         <span class="keywordtype">void</span>  <a class="code" href="classtp_1_1_pile.html#a10900ae9885217c27445d70922848ef8" title="DÃ©truire une Pile.">_detruire</a>();
+<a name="l00217"></a>00217 
+<a name="l00218"></a>00218     } ;                             
+<a name="l00219"></a>00219 
+<a name="l00220"></a>00220 }
+<a name="l00221"></a>00221 
+<a name="l00222"></a>00222 <span class="preprocessor">#include &quot;Pile.hpp&quot;</span>
+<a name="l00223"></a>00223 <span class="preprocessor"></span>
+<a name="l00224"></a>00224 <span class="preprocessor">#endif</span>
+</pre></div></div><!-- contents -->
+
+
+<hr class="footer"/><address class="footer"><small>
+Généré le Jeudi Octobre 3 2013 11:19:33 pour Solitaire - par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.7.6.1
+</small></address>
+
+</body>
+</html>
