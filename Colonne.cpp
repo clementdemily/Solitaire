@@ -50,6 +50,9 @@ void ColonneCartes::initColonneCartes(Liste<Carte> &p_listeCartes)
  * \fn void ColonneCartes::ajoute(const Carte &p_carte)
  *
  * \param[in] p_carte la carte a ajouter a la colonne
+ *
+ * \pre la carte peut est ajoutee a la colonne d'apres les regles du jeu
+ * \exception runtime_error si la carte ne peut pas etre mise sur la colonne
  */
 void ColonneCartes::ajoute(const Carte &p_carte)
 {
@@ -68,6 +71,9 @@ void ColonneCartes::ajoute(const Carte &p_carte)
  *
  * \param[in] p_destination la colonne vers laquelle deplacer les cartes
  * \param[in] p_nombreCartes le nombre de cartes a deplacer
+ *
+ * \pre les parametres du deplacement doivent etre conformes aux regles du jeu
+ * \exception runtime_error si le deplacement n'est pas conforme aux regles
  */
 void ColonneCartes::deplacePaquet(ColonneCartes &p_destination, int p_nombreCartes)
 {
