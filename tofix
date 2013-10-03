@@ -1,1 +1,4 @@
 indentation
+colonne vide : "-"
+dans les piles : "X" => "  X"
+fin : bravo vous avez gagne + exit brutal

@@ -4,6 +4,7 @@
 # define __CARTE_H
 
 #include <iostream>
+#include <string>
 
 #ifndef __COLOR__
   #define BLACK  "\033[22;30m"
