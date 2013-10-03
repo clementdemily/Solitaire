@@ -5,12 +5,12 @@ CMakeFiles
 CMakeFiles/*
 Makefile
 
-Testeur/CMakeCache.txt
-Testeur/cmake_install.cmake
-Testeur/runTests
-Testeur/CMakeFiles
-Testeur/CMakeFiles/*
-Testeur/Makefile
+Testeurs/CMakeCache.txt
+Testeurs/cmake_install.cmake
+Testeurs/runTests
+Testeurs/CMakeFiles
+Testeurs/CMakeFiles/*
+Testeurs/Makefile
 
 .cprojet
 .projet
