@@ -58,13 +58,13 @@ TEST_F(ColonneCartesTest, deplacePaquet)
   ColonneCartes source;
   ColonneCartes destination;
 
-  Carte dixCoeur(COEUR, DIX);
-  Carte neufTrefle(TREFLE, NEUF);
-  Carte huitCarreau(CARREAU, HUIT);
+  Carte roiCoeur(COEUR, ROI);
+  Carte dameTrefle(TREFLE, DAME);
+  Carte valetCarreau(CARREAU, VALET);
 
-  source.ajoute(dixCoeur);
-  source.ajoute(neufTrefle);
-  source.ajoute(huitCarreau);
+  source.ajoute(roiCoeur);
+  source.ajoute(dameTrefle);
+  source.ajoute(valetCarreau);
 
   EXPECT_EQ(3, source.getNbCartesVisibles());
 
@@ -72,14 +72,13 @@ TEST_F(ColonneCartesTest, deplacePaquet)
   EXPECT_EQ(0, source.getNbCartesVisibles());
   EXPECT_EQ(3, destination.getNbCartesVisibles());
 
+  EXPECT_THROW(destination.deplacePaquet(source, 2), std::runtime_error);
+
+  source.ajoute(roiCoeur);
   destination.deplacePaquet(source, 2);
-  EXPECT_EQ(2, source.getNbCartesVisibles());
+  EXPECT_EQ(3, source.getNbCartesVisibles());
   EXPECT_EQ(1, destination.getNbCartesVisibles());
 
-  source.deplacePaquet(destination, 2);
-  EXPECT_EQ(0, source.getNbCartesVisibles());
-  EXPECT_EQ(3, destination.getNbCartesVisibles());
-  source.ajoute(huitCarreau);
   EXPECT_THROW(source.deplacePaquet(destination, 1), std::runtime_error);
 }
 
