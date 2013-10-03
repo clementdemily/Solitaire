@@ -170,6 +170,7 @@ namespace tp
 		*
 		* \brief classe interne représentant un noeud typique
 		*
+		*
 		*  La classe représente un noeud typique
 		*  pour implémenter une list doublement chaînée.
 		*/

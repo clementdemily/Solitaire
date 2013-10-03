@@ -1,3 +1,10 @@
+/**
+ * \file Colonne.h
+ * \brief Classe définissant une colonne de carte
+ * \author Nathan Irjud
+ * \version 1.0
+ * \date octobre 2013
+ */
 
 
 #ifndef __COLONNE_CARTES_H
@@ -12,7 +19,7 @@ namespace tp
 {
 
 /**
- * \class ColonneCarte
+ * \class ColonneCartes
  *
  * \brief classe representant une colonne de cartes du jeu solitaire
  *

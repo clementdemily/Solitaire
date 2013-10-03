@@ -13,6 +13,9 @@ namespace tp
 
 	/**
 	 * \fn Pile<T>:: Pile ()
+     *  \brief Constructeur par défaut
+     *
+     *  \post Une instance de la classe Pile est initialisée
 	 */
 	template <typename T>
 	 Pile<T>::Pile()

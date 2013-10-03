@@ -1,11 +1,9 @@
 /**
  * \file Solitaire.h
- * \brief Classe contenant la logique du jeu
+ * \brief Classe contenant la logique du jeu solitaire
  * \author Clément Demily
- * \version 0.1
+ * \version 1.0
  * \date octobre 2013
- *
- * Classe Solitaire
  */
 
 #ifndef _SOLITAIRE__H
@@ -46,8 +44,8 @@ namespace tp
 {
 
 	/** 
-    * \file Solitaire.hpp
-    * \brief Classe contenant la logique du jeu
+    * \class Solitaire
+    * \brief Classe contenant la logique du jeu solitaire
  	*
 	*/
 	class Solitaire {
