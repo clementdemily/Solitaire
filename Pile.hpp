@@ -3,10 +3,9 @@
  * \brief Le code des opérateurs de la Pile.
  * \author Clément Demily
  * \version 1.0
- * \brief 
  * \date octobre 2013
  *
- * Implémentation de la classe générique Pile dans une Pile chainée
+ * Implémentation de la classe générique Pile dans une liste chainée
  */
 
 namespace tp 

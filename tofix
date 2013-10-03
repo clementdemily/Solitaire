@@ -10,10 +10,11 @@ File.h                      OK
 File.hpp                    OK
 Liste.h                    	OK
 Liste.hpp                   OK
-Pile.h                      KO
-Pile.hpp                    KO
-Solitaire.cpp               KO
-Solitaire.h                 KO
+Pile.h                      OK
+Pile.hpp                    OK
+Solitaire.cpp               OK
+Solitaire.h                 OK
+
 jeuSolitaire.cpp            KO
 
 carteTesteur.cpp            KO

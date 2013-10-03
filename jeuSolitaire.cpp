@@ -7,6 +7,12 @@
 
 using namespace tp;
 
+/**
+ * \brief Recupere le prompt du menu
+ *
+ * \fn std::string& reqMenu()
+ * \return Le prompt du menu
+*/
 std::string& reqMenu()
 {
     static std::string menu;
@@ -35,6 +41,11 @@ std::string& reqMenu()
     return (menu);
 }
 
+/**
+ * \brief Nettoye la console
+ *
+ * \fn void nettoyerConsole()
+*/
 void nettoyerConsole()
 {
 #if defined(_WIN32)
@@ -44,6 +55,12 @@ void nettoyerConsole()
 #endif           
 }
 
+/**
+ * \brief S'occupe de recupérer les données pour effectuer la fonction deplacerTalonAColonne() de Solitaire()
+ *
+ * \fn void deplacerCarteTalonVersColonne()
+ * \param[in] Solitaire& Instance du jeu de Solitaire
+*/
 void deplacerCarteTalonVersColonne(Solitaire& s)
 {
     std::string saisie;
@@ -58,6 +75,12 @@ void deplacerCarteTalonVersColonne(Solitaire& s)
     s.deplacerTalonAColonne(choixColonne);
 }
 
+/**
+ * \brief S'occupe de recupérer les données pour effectuer la fonction deplacerCarteTalonVersPile() de Solitaire()
+ *
+ * \fn void deplacerCarteTalonVersPile()
+ * \param[in] Solitaire& Instance du jeu de Solitaire
+*/
 void deplacerCarteTalonVersPile(Solitaire& s)
 {
     std::string saisie;
@@ -72,6 +95,12 @@ void deplacerCarteTalonVersPile(Solitaire& s)
     s.deplacerTalonAPile(choixPile);
 }
 
+/**
+ * \brief S'occupe de recupérer les données pour effectuer la fonction deplacerCartesColonneVersColonne() de Solitaire()
+ *
+ * \fn void deplacerCartesColonneVersColonne()
+ * \param[in] Solitaire& Instance du jeu de Solitaire
+*/
 void deplacerCartesColonneVersColonne(Solitaire& s)
 {
     std::string saisie;
@@ -102,6 +131,12 @@ void deplacerCartesColonneVersColonne(Solitaire& s)
     s.deplacerColonneAColonne(choixColonne1, choixColonne2, nbCartes);
 }
 
+/**
+ * \brief S'occupe de recupérer les données pour effectuer la fonction deplacerCarteColonneVersPile() de Solitaire()
+ *
+ * \fn void deplacerCarteColonneVersPile()
+ * \param[in] Solitaire& Instance du jeu de Solitaire
+*/
 void deplacerCarteColonneVersPile(Solitaire& s)
 {
     std::string saisie;
@@ -124,6 +159,14 @@ void deplacerCarteColonneVersPile(Solitaire& s)
     s.deplacerColonneAPile(choixColonne, choixPile);
 }
 
+/**
+ * \brief Lance la fonction associé au choix de l'utilisateur
+ *
+ * \fn void jouer()
+ * \param[in] Solitaire& Instance du jeu de Solitaire
+ * \pre le choix doit être compris entre 1 et 6 inclusivement
+ * \param[in] int choix de l'utilisateur
+*/
 void jouer(Solitaire& s, int choix)
 {
     switch (choix)
@@ -151,6 +194,14 @@ void jouer(Solitaire& s, int choix)
     }
 }
 
+/**
+ * \brief On recupere le choix de l'utilisateur
+ *
+ * \fn int recupererChoixMenu()
+ * \param[in] Solitaire& Instance du jeu de Solitaire
+ * \param[in] bool code d'erreur
+ * \return Choix de l'utilisateur
+*/
 int recupererChoixMenu(Solitaire& s, bool err)
 {
     std::string saisie;
