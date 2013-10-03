@@ -44,7 +44,7 @@ inline Valeur Carte::reqValeur() const
  */
 void Carte::asgSorte(Sorte p_sorte)
 {
-	m_sorte = p_sorte;
+  m_sorte = p_sorte;
 }
 
 /**
@@ -54,7 +54,7 @@ void Carte::asgSorte(Sorte p_sorte)
  */
 void Carte::asgValeur(Valeur p_valeur)
 {
-	m_valeur = p_valeur;
+  m_valeur = p_valeur;
 }
 
 /**
@@ -118,7 +118,7 @@ std::ostream &operator<<(std::ostream &p_os, const Carte &p_carte)
   
 
 #if defined(_WIN32)
-    p_os << s_valeur[(int)p_carte.reqValeur()] << "'" << s_sorte[(int)p_carte.reqSorte()];
+  p_os << s_valeur[(int)p_carte.reqValeur()] << "'" << s_sorte[(int)p_carte.reqSorte()];
 #else
   if (s_sorte[(int)p_carte.reqSorte()] == "CO" || s_sorte[(int)p_carte.reqSorte()] == "CA")
     p_os << RED << s_valeur[(int)p_carte.reqValeur()] << "'" << s_sorte[(int)p_carte.reqSorte()] << RESETCOLOR;
