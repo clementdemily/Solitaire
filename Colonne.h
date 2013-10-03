@@ -11,6 +11,14 @@
 namespace tp
 {
 
+/**
+ * \class ColonneCarte
+ *
+ * \brief classe representant une colonne de cartes du jeu solitaire
+ *
+ *  La classe gere une colonne de cartes selon les regles du jeu solitaire ainsi
+ *  que les interactions entre plusieurs colonnes.
+ */	
 class ColonneCartes
 {
  public:

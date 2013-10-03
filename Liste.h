@@ -20,9 +20,9 @@ namespace tp
 /**
  * \class Liste
  *
- * \brief classe générique représentant une liste ordonnée
+ * \brief classe generique representant une liste ordonnee
  *
- *  La classe gére une liste ordonnée générique. L'implémentation
+ *  La classe gere une liste ordonnee generique. L'implementation
  *  se fait dans une liste circulaire.
  */
 template<typename T>
@@ -32,23 +32,23 @@ public:
 
     //Constructeurs
     /**
-     *  \brief Constructeur par défaut
+     *  \brief Constructeur par defaut
      *
-     *  \post Une instance de la classe Liste est initialisée
+     *  \post Une instance de la classe Liste est initialisee
      */
     Liste();
 
     /**
      *  \brief Constructeur de copie
      *
-     *  \pre Il faut qu'il y ait suffisamment de mémoire
+     *  \pre Il faut qu'il y ait suffisamment de memoire
      *  \post une copie profonde la File source
      *  \exception bad_alloc s'il n'y a pas assez de mémoire
      */
     Liste(const Liste&);
     ~Liste();
 
-    //Surcharge d'opérateurs
+    //Surcharge d'operateurs
     Liste<T>& operator =(const Liste<T>&);
 
     //Modificateurs
@@ -56,7 +56,7 @@ public:
     void enleverEl(const T&);
     void enleverPos(int);
 
-    //Sélécteurs
+    //Selecteurs
     int taille() const;
     bool estVide() const;
     bool appartient(const T&) const;
@@ -70,15 +70,15 @@ private:
     /**
      * \class Noeud
      *
-     * \brief classe interne représentant un noeud typique
+     * \brief classe interne representant un noeud typique
      *
-     *  La classe représente un noeud typique
+     *  La classe represente un noeud typique
      *  pour implémenter une liste circulaire.
      */
     class Noeud
     {
     public:
-        T el; /*!<L'élément de base de la liste*/
+        T el; /*!<L'element de base de la liste*/
         Noeud * suivant; /*!<Un pointeur vers le noeud suivant*/
 
         explicit Noeud(const T& data_item, Noeud * next_ptr = 0) :
@@ -90,12 +90,12 @@ private:
     /** \typedef typedef Noeud *elem
      *  \brief Définition d'un pointeur sur un Noeud
      *
-     *  Pour abréger les écritures
+     *  Pour abreger les ecritures
      */
     typedef Noeud * elem;
     elem dernier; /*!<Pointeur vers le dernier noeud de la liste*/
 
-    //Méthodes privées
+    //Methodes privees
     void _copier(Noeud *);
     void _detruire();
 };

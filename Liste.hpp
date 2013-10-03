@@ -119,6 +119,9 @@ bool Liste<T>::appartient(const T &p_element) const
  *
  * \param[in] p_position La position de l'element   
  * \return L'element à la position demandee
+ *
+ * \pre p_postion compris entre 1 et la taille inclus
+ * \exception range_error si p_position n'est pas dans la liste
  */
 template<typename T>
 const T &Liste<T>::element(int p_position) const
@@ -139,6 +142,11 @@ const T &Liste<T>::element(int p_position) const
  *
  * \param[in] p_element L'element dont on cherche la position  
  * \return La position de l'element
+ *
+ * \pre la liste ne doit pas etre vide
+ * \exception logic_error si la liste est vide
+ * \pre p_element doit etre present dans la liste
+ * \exception logic_error si p_element n'est pas trouve dans la liste
  */
 template<typename T>
 int Liste<T>::position(const T &p_element) const
@@ -178,6 +186,9 @@ inline bool Liste<T>::estVide() const
  *
  * \param[in] p_element Element à ajouter 
  * \param[in] p_position Position où inserer l'element
+ *
+ * \pre p_position compris entre 1 et [taille de la liste] + 1 inclus
+ * \exception range_error si la position demandee n'est pas possible
  */
 template<typename T>
 void Liste<T>::ajouter(const T& p_element, int p_position)
@@ -206,6 +217,11 @@ void Liste<T>::ajouter(const T& p_element, int p_position)
  * \fn void Liste<T>::enleverEl(const T& x)
  *
  * \param[in] p_element La valeur de l'element a enlever, seul le premier trouve est enleve
+ * 
+ * \pre la liste ne doit pas etre vide
+ * \exception logic_error si la liste est vide
+ * \pre p_element doit etre present dans la liste
+ * \exception logic_error si p_element n'est pas trouve dans la liste
  */
 template<typename T>
 void Liste<T>::enleverEl(const T& p_element)
@@ -237,6 +253,9 @@ void Liste<T>::enleverEl(const T& p_element)
  * \fn void Liste<T>::enleverPos(int p_position)
  *
  * \param[in] p_position Position de l'element a enlever 
+ *
+ * \pre p_position compris entre 1 et la taille de la liste inclus
+ * \exception range_error si p_position n'est pas dans la liste
  */
 template<typename T>
 void Liste<T>::enleverPos(int p_position)

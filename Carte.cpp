@@ -8,8 +8,8 @@ namespace tp
 /**
  * \fn Carte::Carte(Sorte p_sorte, Valeur p_valeur)
  *
- * \param[in] p_sorte la sorte de la nouvelle carte
- * \param[in] p_valeur la valeur de la nouvelle carte
+ * \param[in] p_sorte [optionnel] la sorte de la nouvelle carte. (defaut = pique)
+ * \param[in] p_valeur [optionnel] la valeur de la nouvelle carte. (defaut = as)
  */
 Carte::Carte(Sorte p_sorte, Valeur p_valeur)
   : m_sorte(p_sorte), m_valeur(p_valeur)
