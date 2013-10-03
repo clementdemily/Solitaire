@@ -101,9 +101,6 @@ namespace tp
 		/**                       
 		 * \brief Déplace p_nbCartes cartes à partir de la colonne p_colonneSource vers la colonne p_colonneDestination. 
 		 *
-		 * \param[in] p_colonneSource le numéro de la colonne source.
-		 * \param[in] p_colonneDestination le numéro de la colonne de destination.
-		 * \param[in] p_nbCartes le nombre de cartes à déplacer
 		 * \pre p_colonneSource et p_colonneDestination doivent être entre 0 et 6 inclusivement.
 		 * \exception runtime_error si les paramètres ne sont pas cohérents avec les règles du jeu.
 		 */
@@ -112,7 +109,6 @@ namespace tp
 		/**                       
 		 * \brief Déplace la carte du dessus du talon vers la colonne spécifiée par "p_colonneDestination". 
 		 *
-		 * \param[in] p_colonneDestination le numéro de la colonne de destination.
 		 * \pre p_colonneDestination compris entre 0 et 6 inclus
 		 * \exception runtime_error si le déplacement demandé par l'appel de cette méthode n'est pas réglementaire
 		 */
@@ -121,7 +117,6 @@ namespace tp
 		/**                       
 		 * \brief Déplace la carte du dessus du talon vers la pile spécifiée par "p_pileDestination".
 		 *
-		 * \param[in] p_pileDestination le numéro de la pile de destination
 		 * \pre p_pileDestination compris entre 0 et 3 inclus
 		 * \exception runtime_error si le déplacement demandé par l'appel de cette méthode n'est pas réglementaire
 		 */
@@ -130,9 +125,7 @@ namespace tp
 		/**                       
 		 * \brief Déplace la dernière carte de la colonne spécifiée par "p_colonneSource" vers la pile spécifiée par "p_pileDestination".
 		 *
-		 * \param[in] p_pileDestination le numéro de la pile de destination
 		 * \pre p_pileDestination compris entre 0 et 3 inclus
-		 * \param[in] p_colonneSource le numéro de la colonne source.
 		 * \pre p_colonneSource doit être entre 0 et 6 inclusivement.
 		 * \exception runtime_error si le déplacement demandé par l'appel de cette méthode n'est pas réglementaire
 		 */

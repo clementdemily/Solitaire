@@ -2,10 +2,10 @@
  * \pile Pile.h
  * \brief Classe définissant le type abstrait Pile
  * \author Clément Demily
- * \version 0.1
+ * \version 1.0
  * \date octobre 2013
  *
- * Représentation dans une Pile chainée
+ * Représentation dans une liste chainée
  */
 
 #ifndef _PILE__H
@@ -30,7 +30,7 @@ namespace tp
 	* \brief classe générique représentant une Pile ordonnée
 	*
 	*  La classe gère une Pile générique ordonnée. L'implémentation
-	*  se fait dans une Pile simplement chaînée.
+	*  se fait dans une liste simplement chaînée.
 	*/
 	template <typename T>
 	class Pile {
@@ -171,7 +171,7 @@ namespace tp
 		* \brief classe interne représentant un noeud typique
 		*
 		*  La classe représente un noeud typique
-		*  pour implémenter une Pile doublement chaînée.
+		*  pour implémenter une list doublement chaînée.
 		*/
 
 		class Noeud;
