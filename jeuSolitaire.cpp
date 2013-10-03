@@ -17,12 +17,12 @@ std::string& reqMenu()
 {
     static std::string menu;
 
-#if !defined(_WIN32)
+/*#if !defined(_WIN32)
     menu = YELLOW;
     menu += 
-#else
+#else*/
     menu =
-#endif
+//#endif
     "\n"
     "*******************************************\n"
     "Menu\n"
@@ -35,9 +35,9 @@ std::string& reqMenu()
     "6. Quitter.\n"
     "*******************************************\n"
     "Votre choix : ";
-#if !defined(_WIN32)
+/*#if !defined(_WIN32)
     menu += RESETCOLOR;
-#endif
+#endif*/
     return (menu);
 }
 
