@@ -1,4 +1,5 @@
-indentation         
+indentation
+dans les piles : "X" => "  X"       
             
 VERIFIER LA DOC ET LA NORME:
 Carte.cpp                   KO
@@ -20,3 +21,4 @@ colonneTesteur.cpp          KO
 fileTesteur.cpp             KO
 pileTesteur.cpp             KO
 solitaireTesteur.cpp        KO
+
