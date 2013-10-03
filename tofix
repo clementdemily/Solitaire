@@ -8,8 +8,8 @@ Colonne.cpp                 OK
 Colone.h                    OK
 File.h                      OK
 File.hpp                    OK
-Liste.h                     KO
-Liste.hpp                   KO
+Liste.h                    	OK
+Liste.hpp                   OK
 Pile.h                      KO
 Pile.hpp                    KO
 Solitaire.cpp               KO
