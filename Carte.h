@@ -51,6 +51,8 @@ class Carte
  public:
   Sorte reqSorte() const;
   Valeur reqValeur() const;
+  void asgSorte(Sorte);
+  void asgValeur(Valeur);
 
  public:
   bool estSuivante(const Carte &) const;

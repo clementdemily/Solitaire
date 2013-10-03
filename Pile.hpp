@@ -178,7 +178,6 @@ namespace tp
 	void Pile<T>::empiler(const T& p_elementAempiler)
 	{
 		// empiler un élément dans la Pile
-		elem tmp;
 		elem nouveau = new Noeud(p_elementAempiler);
 
 		nouveau->m_suivant = 0;

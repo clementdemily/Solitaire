@@ -38,6 +38,26 @@ inline Valeur Carte::reqValeur() const
 }
 
 /**
+ * \fn void Carte::asgSorte(Sorte p_sorte)
+ *
+ * \param[in] p_sorte la nouvelle sorte de la carte
+ */
+void Carte::asgSorte(Sorte p_sorte)
+{
+	m_sorte = p_sorte;
+}
+
+/**
+ * \fn void Carte::asgValeur(Sorte p_valeur)
+ *
+ * \param[in] p_valeur la nouvelle valeur de la carte
+ */
+void Carte::asgValeur(Valeur p_valeur)
+{
+	m_valeur = p_valeur;
+}
+
+/**
  * \fn bool Carte::estSuivante(const Carte &p_carte) const
  *
  * \param[in] p_carte la carte a superposer a la carte courante
