@@ -1,1 +1,22 @@
-indentation
+indentation         
+            
+VERIFIER LA DOC ET LA NORME:
+Carte.cpp                   KO
+Carte.h                     KO
+Colonne.cpp                 KO
+Colone.h                    KO
+File.h                      OK
+File.hpp                    OK
+Liste.h                     KO
+Liste.hpp                   KO
+Pile.h                      KO
+Pile.hpp                    KO
+Solitaire.cpp               KO
+Solitaire.h                 KO
+jeuSolitaire.cpp            KO
+
+carteTesteur.cpp            KO
+colonneTesteur.cpp          KO
+fileTesteur.cpp             KO
+pileTesteur.cpp             KO
+solitaireTesteur.cpp        KO
